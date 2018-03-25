@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Towers/LaserTower.gd" type="Script" id=1]
+[ext_resource path="res://Towers/laser.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 142.733
+
+[node name="LaserTower" type="Node2D"]
+
+script = ExtResource( 1 )
+sight_range = 200
+rot_speed = 0.1
+DAMAGE = 10
+LASER_COLOR = Color( 1, 0, 0, 1 )
+
+[node name="tower" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="targetting_laser" type="RayCast2D" parent="tower" index="0"]
+
+enabled = false
+exclude_parent = true
+cast_to = Vector2( 0, -200 )
+collision_mask = 1
+
+[node name="SensorRange" type="Area2D" parent="." index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SensorRange" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="FireTimer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = true
+
+[connection signal="area_entered" from="SensorRange" to="." method="_on_SensorRange_area_entered"]
+
+[connection signal="area_exited" from="SensorRange" to="." method="_on_SensorRange_area_exited"]
+
+[connection signal="timeout" from="FireTimer" to="." method="_on_FireTimer_timeout"]
+
+

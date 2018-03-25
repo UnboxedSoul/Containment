@@ -1,0 +1,156 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Tiles/tileset.png" type="Texture" id=1]
+[ext_resource path="res://Tiles/tileset_1.png" type="Texture" id=2]
+[ext_resource path="res://Tiles/tileset_2.png" type="Texture" id=3]
+[ext_resource path="res://Tiles/tileset_3.png" type="Texture" id=4]
+[ext_resource path="res://Tiles/tileset_4.png" type="Texture" id=5]
+[ext_resource path="res://Tiles/tileset_5.png" type="Texture" id=6]
+[ext_resource path="res://Tiles/tileset_6.png" type="Texture" id=7]
+[ext_resource path="res://Tiles/tileset_7.png" type="Texture" id=8]
+[ext_resource path="res://Tiles/tileset_8.png" type="Texture" id=9]
+[ext_resource path="res://Tiles/tileset_9.png" type="Texture" id=10]
+[ext_resource path="res://Tiles/tileset_10.png" type="Texture" id=11]
+[ext_resource path="res://Tiles/tileset_11.png" type="Texture" id=12]
+[ext_resource path="res://Tiles/tileset_12.png" type="Texture" id=13]
+[ext_resource path="res://Tiles/tileset_13.png" type="Texture" id=14]
+[ext_resource path="res://Tiles/tileset_14.png" type="Texture" id=15]
+[ext_resource path="res://Tiles/tileset_15.png" type="Texture" id=16]
+[ext_resource path="res://Tiles/tileset_16.png" type="Texture" id=17]
+[ext_resource path="res://Tiles/tileset_17.png" type="Texture" id=18]
+[ext_resource path="res://Tiles/tileset_18.png" type="Texture" id=19]
+[ext_resource path="res://Tiles/tileset_19.png" type="Texture" id=20]
+[ext_resource path="res://Tiles/tileset_20.png" type="Texture" id=21]
+[ext_resource path="res://Tiles/tileset_21.png" type="Texture" id=22]
+[ext_resource path="res://Tiles/tileset_22.png" type="Texture" id=23]
+[ext_resource path="res://Tiles/tileset_23.png" type="Texture" id=24]
+[ext_resource path="res://Tiles/tileset_24.png" type="Texture" id=25]
+
+[node name="Tileset" type="Node2D"]
+
+[node name="tileset" type="Sprite" parent="." index="0"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 1 )
+
+[node name="tileset_1" type="Sprite" parent="." index="1"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 2 )
+
+[node name="tileset_2" type="Sprite" parent="." index="2"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 3 )
+
+[node name="tileset_3" type="Sprite" parent="." index="3"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 4 )
+
+[node name="tileset_4" type="Sprite" parent="." index="4"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 5 )
+
+[node name="tileset_5" type="Sprite" parent="." index="5"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 6 )
+
+[node name="tileset_6" type="Sprite" parent="." index="6"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 7 )
+
+[node name="tileset_7" type="Sprite" parent="." index="7"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 8 )
+
+[node name="tileset_8" type="Sprite" parent="." index="8"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 9 )
+
+[node name="tileset_9" type="Sprite" parent="." index="9"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 10 )
+
+[node name="tileset_10" type="Sprite" parent="." index="10"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 11 )
+
+[node name="tileset_11" type="Sprite" parent="." index="11"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 12 )
+
+[node name="tileset_12" type="Sprite" parent="." index="12"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 13 )
+
+[node name="tileset_13" type="Sprite" parent="." index="13"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 14 )
+
+[node name="tileset_14" type="Sprite" parent="." index="14"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 15 )
+
+[node name="tileset_15" type="Sprite" parent="." index="15"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 16 )
+
+[node name="tileset_16" type="Sprite" parent="." index="16"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 17 )
+
+[node name="tileset_17" type="Sprite" parent="." index="17"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 18 )
+
+[node name="tileset_18" type="Sprite" parent="." index="18"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 19 )
+
+[node name="tileset_19" type="Sprite" parent="." index="19"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 20 )
+
+[node name="tileset_20" type="Sprite" parent="." index="20"]
+
+position = Vector2( 183, 226 )
+texture = ExtResource( 21 )
+
+[node name="tileset_21" type="Sprite" parent="." index="21"]
+
+position = Vector2( 263, 229 )
+texture = ExtResource( 22 )
+
+[node name="tileset_22" type="Sprite" parent="." index="22"]
+
+position = Vector2( 366, 227 )
+texture = ExtResource( 23 )
+
+[node name="tileset_23" type="Sprite" parent="." index="23"]
+
+position = Vector2( 366, 116 )
+texture = ExtResource( 24 )
+
+[node name="tileset_24" type="Sprite" parent="." index="24"]
+
+position = Vector2( 276, 118 )
+texture = ExtResource( 25 )
+
+

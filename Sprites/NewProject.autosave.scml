@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="Arachne">
+        <file id="0" name="Arachne/spider_body.png" width="151" height="95" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="Arachne/eye.png" width="31" height="28" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="Arachne/spider_leg.png" width="100" height="92" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="entity_000">
+        <animation id="0" name="NewAnimation" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="0" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="0" z_index="3"/>
+                    <object_ref id="4" timeline="4" key="0" z_index="4"/>
+                    <object_ref id="5" timeline="5" key="0" z_index="5"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="spider_body">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" pivot_x="0.489985" pivot_y="0.479767" angle="0"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="eye">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="-10" y="14"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="spider_leg">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="-146" y="-7"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="spider_leg_000">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="-151" y="66"/>
+                </key>
+            </timeline>
+            <timeline id="4" name="spider_leg_001">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="158.479554" y="33.096654" angle="0" scale_x="-1"/>
+                </key>
+            </timeline>
+            <timeline id="5" name="spider_leg_002">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="105" y="-35" angle="0" scale_x="-1"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
