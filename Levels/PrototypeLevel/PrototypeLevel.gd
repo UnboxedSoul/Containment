@@ -38,6 +38,7 @@ func _on_SpawnTimer_timeout():
 	new_spider.set_position($Path/PathFollow2D.position)
 	new_spider.path=paths[randi()%2]
 	add_child(new_spider)
+	$SpawnTimer.wait_time-=1
 
 func _on_ExitZone_area_entered( area ):
 	health-=1
