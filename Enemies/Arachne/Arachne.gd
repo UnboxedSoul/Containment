@@ -20,6 +20,8 @@ func damage(dmg):
 		dead=true
 		$Area2D.queue_free()
 		$DecayTimer.start()
+		return true
+	return false
 
 func _process(delta):
 	if(!dead):

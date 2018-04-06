@@ -14,6 +14,7 @@ script = ExtResource( 1 )
 sight_range = 200
 rot_speed = 0.1
 DAMAGE = 10
+COST = 25
 LASER_COLOR = Color( 1, 0, 0, 1 )
 
 [node name="tower" type="Sprite" parent="." index="0"]

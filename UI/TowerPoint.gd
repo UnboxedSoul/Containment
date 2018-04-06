@@ -20,8 +20,13 @@ func _ready():
 
 func spawn_tower(t):
 	tower=t.instance()
-	add_child(tower)
-	hide_menu()
+	if(tower.COST<=get_parent().power):
+		add_child(tower)
+		hide_menu()
+		get_parent().add_power(-tower.COST)
+	else:
+		tower.queue_free()
+		
 	
 func create_tower_buttons():
 	var i = 0
@@ -58,8 +63,9 @@ func _on_btnAdd_pressed():
 		create_tower_buttons()
 
 func _on_btnRemove_pressed():
-	tower.queue_free()
-	tower=null
+	if(tower):
+		tower.queue_free()
+		tower=null
 	hide_menu()
 
 func _on_btnUpgrade_pressed():

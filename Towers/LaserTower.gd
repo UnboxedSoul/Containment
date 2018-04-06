@@ -1,10 +1,9 @@
 extends "res://Towers/Tower.gd"
 
-var AvailableTargets = []
-export var DAMAGE=10
-export (Color) var LASER_COLOR=Color(1.0,0,0,1.0)
+
 var laser_shot=-1
 var cur_target
+
 
 func _ready():
 	set_process(true)
@@ -38,7 +37,8 @@ func _draw():
 func fire_at(target):
 	if(target.get_ref()):
 		cur_target=target
-		target.get_ref().get_parent().damage(DAMAGE)
+		if(target.get_ref().get_parent().damage(DAMAGE)):
+			get_parent().get_parent().add_power(20)
 
 func _on_FireTimer_timeout():
 	if(AvailableTargets.size()>0):

@@ -1,8 +1,5 @@
 extends "res://Towers/Tower.gd"
 
-var AvailableTargets = []
-export var DAMAGE=5
-export (Color) var LASER_COLOR=Color(1.0,0,0,1.0)
 export var EFFECT_INTENSITY=0.5
 export var EFFECT_DURATION=1.5
 var laser_shot=-1
@@ -48,7 +45,8 @@ func fire_at(target):
 	if(target.get_ref()):
 		var target_obj = target.get_ref().get_parent()
 		cur_target=target
-		target_obj.damage(DAMAGE)
+		if(target_obj.damage(DAMAGE)):
+			get_parent().get_parent().add_power(20)
 		target_obj.cur_speed=target_obj.SPEED*EFFECT_INTENSITY
 		target_obj.get_node("EffectTimer").wait_time=EFFECT_DURATION
 		target_obj.get_node("EffectTimer").start()
