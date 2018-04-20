@@ -4,6 +4,8 @@ export var EFFECT_INTENSITY=0.5
 export var EFFECT_DURATION=1.5
 var laser_shot=-1
 var cur_target
+var is_firing=false
+
 
 func _ready():
 	set_process(true)
@@ -46,9 +48,11 @@ func fire_at(target):
 		var target_obj = target.get_ref().get_parent()
 		cur_target=target
 		if(target_obj.damage(DAMAGE)):
+			#If the above damage call returns true, then the enemy died
+			#So, add 20 energy to the player's score
 			get_parent().get_parent().add_power(20)
 		target_obj.cur_speed=target_obj.SPEED*EFFECT_INTENSITY
-		target_obj.get_node("EffectTimer").wait_time=EFFECT_DURATION
+		target_obj.get_node("EffectTimer").wait_time=EFFECT_DURATION*level
 		target_obj.get_node("EffectTimer").start()
 		
 
