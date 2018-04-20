@@ -5,14 +5,12 @@ var tower
 var creatingTower = false
 
 func hide_menu():
-	$empty_button.hide()
 	z_index=0
 	$MenuTimeout.stop()
 	$AnimationPlayer.play("hide_menu")
 	remove_tower_buttons()
 
 func show_menu():
-	$empty_button.show()
 	z_index=10
 	$MenuTimeout.start()
 	$AnimationPlayer.play("show_menu")
@@ -28,6 +26,7 @@ func spawn_tower(t):
 		get_parent().add_power(-tower.COST)
 	else:
 		tower.queue_free()
+		tower=null
 		
 	
 func create_tower_buttons():
