@@ -16,8 +16,10 @@ var enemy_count = 0
 func _ready():
 	paths.append($Path/PathFollow2D)
 	paths.append($Path2/PathFollow2D)
+	globals.energy=power
 	update_hud()
 	add_tower_points()
+	set_process(true)
 
 func add_tower_points():
 	for y in range(0,15):
@@ -28,13 +30,14 @@ func add_tower_points():
 				add_child(new_tower_spawn)
 
 func update_hud():
-	$HUD.update_display(cur_wave+1, power, health/MAX_HEALTH)
+	$HUD.update_display(cur_wave+1, globals.energy, health/MAX_HEALTH)
 
 func add_power(amt):
-	power+=amt
+	globals.energy+=amt
 	update_hud()
 
 func _process(delta):
+	update_hud()
 	if(enemy_count <= 0):
 		$btnStartWave.show()
 	else:

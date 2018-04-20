@@ -33,16 +33,17 @@ func _on_SensorRange_area_exited( area ):
 		AvailableTargets.remove(area_index)
 
 func fire():
-	for source in get_tree().get_nodes_in_group("source"):
-			if(self.is_firing and self.has_node(source.get_path())):
-				source.fire(200)
+	$tower/turret/LaserBeam.fire(200)
+	$tower/turret2/LaserBeam.fire(200)
+	$tower/turret3/LaserBeam.fire(200)
 
 func fire_at(target):
 	if(target.get_ref()):
 		fire()
 		cur_target=target
-		if(target.get_ref().get_parent().damage(DAMAGE*level)):
-			get_parent().get_parent().add_power(20)
+		target.get_ref().get_parent().damage(DAMAGE*level)
+		#if():
+		#	get_parent().get_parent().add_power(20)
 
 func _on_FireTimer_timeout():
 	if(AvailableTargets.size()>0):

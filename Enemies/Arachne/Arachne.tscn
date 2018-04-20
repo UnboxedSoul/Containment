@@ -46,7 +46,6 @@ MAX_HEALTH = 100.0
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 4
 playing = true
 _sections_unfolded = [ "Transform" ]
 

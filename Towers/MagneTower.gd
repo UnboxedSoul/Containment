@@ -47,10 +47,11 @@ func fire_at(target):
 	if(target.get_ref()):
 		var target_obj = target.get_ref().get_parent()
 		cur_target=target
-		if(target_obj.damage(DAMAGE)):
+		target_obj.damage(DAMAGE)
+		#if():
 			#If the above damage call returns true, then the enemy died
 			#So, add 20 energy to the player's score
-			get_parent().get_parent().add_power(20)
+			#get_parent().get_parent().add_power(20)
 		target_obj.cur_speed=target_obj.SPEED*EFFECT_INTENSITY
 		target_obj.get_node("EffectTimer").wait_time=EFFECT_DURATION*level
 		target_obj.get_node("EffectTimer").start()

@@ -12,7 +12,7 @@
 custom_solver_bias = 0.0
 radius = 137.702
 
-[node name="FlameTower" type="Node2D"]
+[node name="FlameTower" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 sight_range = 200
@@ -125,6 +125,13 @@ wait_time = 0.5
 one_shot = false
 autostart = true
 
+[node name="TargetTimer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = true
+
 [connection signal="area_entered" from="SensorRange" to="." method="_on_SensorRange_area_entered"]
 
 [connection signal="area_exited" from="SensorRange" to="." method="_on_SensorRange_area_exited"]
@@ -134,5 +141,7 @@ autostart = true
 [connection signal="timeout" from="FlameController" to="." method="_on_FlameController_timeout"]
 
 [connection signal="timeout" from="BurnTimer" to="." method="_on_BurnTimer_timeout"]
+
+[connection signal="timeout" from="TargetTimer" to="." method="_on_TargetTimer_timeout"]
 
 
