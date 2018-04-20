@@ -18,9 +18,11 @@ func aim_at(target_pos):
 	var aim = global_position.angle_to_point(target_pos)-deg2rad(90)
 	rotation=aim
 	#Set all lasers to aim at the target
-	for source in get_tree().get_nodes_in_group("source"):
-			if(self.has_node(source.get_path())):
-				source.set_end(target_pos)
+	#Turret1
+	$tower/turret/LaserBeam.set_end(target_pos)
+	$tower/turret2/LaserBeam.set_end(target_pos)
+	$tower/turret3/LaserBeam.set_end(target_pos)
+	
 
 func _on_SensorRange_area_entered( area ):
 	AvailableTargets.append(area)
