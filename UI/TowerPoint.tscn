@@ -128,7 +128,7 @@ tracks/8/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="TowerPoint" type="Node2D" groups=[
+[node name="TowerPoint" type="Node2D" index="0" groups=[
 "tower_points",
 ]]
 

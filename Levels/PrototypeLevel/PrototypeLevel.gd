@@ -11,6 +11,7 @@ var cur_wave=-1
 export var waves = [5,10,15,20,50,100] #Each one is the number of enemies in that wave
 export var wave_spawn_delays = [1,1,.5,.5,.25,.25]
 var num_enemies = 0
+var enemy_count = 0
 
 func _ready():
 	paths.append($Path/PathFollow2D)
@@ -33,6 +34,12 @@ func add_power(amt):
 	power+=amt
 	update_hud()
 
+func _process(delta):
+	if(enemy_count <= 0):
+		$btnStartWave.show()
+	else:
+		$btnStartWave.hide()
+		
 func _on_SpawnTimer_timeout():
 	if(num_enemies>0):
 		var new_spider = spider_bot.instance()
@@ -43,7 +50,8 @@ func _on_SpawnTimer_timeout():
 		num_enemies-=1
 	else:
 		$SpawnTimer.stop()
-		$StartTimer.start()
+		$btnStartWave.show()
+		#$StartTimer.start()
 
 func _on_ExitZone_area_entered( area ):
 	health-=1
@@ -56,3 +64,17 @@ func _on_StartTimer_timeout():
 		$SpawnTimer.wait_time=wave_spawn_delays[cur_wave]
 		update_hud()
 		$SpawnTimer.start()
+
+func _on_btnStartWave_pressed():
+	cur_wave+=1
+	StartNewWave()
+	
+	if(cur_wave<waves.size()):
+		num_enemies = waves[cur_wave]
+		$SpawnTimer.wait_time=wave_spawn_delays[cur_wave]
+		update_hud()
+		$SpawnTimer.start()
+		
+func StartNewWave():
+	num_enemies = 0
+	enemy_count = waves[cur_wave]

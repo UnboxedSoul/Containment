@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Levels/PrototypeLevel/PrototypeLevel.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/Arachne/Arachne.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/TowerPoint.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tiles/tileset1.tres" type="TileSet" id=4]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/BLADRMF_.TTF" type="DynamicFontData" id=6]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -25,7 +26,15 @@ _data = {
 custom_solver_bias = 0.0
 extents = Vector2( 29.3909, 26.7036 )
 
-[node name="PrototypeLevel" type="Node2D"]
+[sub_resource type="DynamicFont" id=4]
+
+size = 41
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="PrototypeLevel" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 spider_bot = ExtResource( 2 )
@@ -126,8 +135,8 @@ autostart = false
 
 process_mode = 1
 wait_time = 5.0
-one_shot = true
-autostart = true
+one_shot = false
+autostart = false
 
 [node name="WaveTimer" type="Timer" parent="." index="7"]
 
@@ -136,10 +145,38 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
+[node name="btnStartWave" type="Button" parent="." index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 374.0
+margin_top = 194.0
+margin_right = 707.0
+margin_bottom = 247.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Start Wave"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
 [connection signal="area_entered" from="ExitZone" to="." method="_on_ExitZone_area_entered"]
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
 
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
+
+[connection signal="pressed" from="btnStartWave" to="." method="_on_btnStartWave_pressed"]
 
 

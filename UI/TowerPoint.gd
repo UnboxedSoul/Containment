@@ -5,12 +5,14 @@ var tower
 var creatingTower = false
 
 func hide_menu():
+	$empty_button.hide()
 	z_index=0
 	$MenuTimeout.stop()
 	$AnimationPlayer.play("hide_menu")
 	remove_tower_buttons()
 
 func show_menu():
+	$empty_button.show()
 	z_index=10
 	$MenuTimeout.start()
 	$AnimationPlayer.play("show_menu")

@@ -21,6 +21,7 @@ func damage(dmg):
 		dead=true
 		$Area2D.queue_free()
 		$DecayTimer.start()
+		get_parent().enemy_count-=1
 		return true
 	return false
 
