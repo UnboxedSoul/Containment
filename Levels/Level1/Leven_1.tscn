@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Levels/PrototypeLevel/PrototypeLevel.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/Arachne/Arachne.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/TowerPoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tiles/tileset1.tres" type="TileSet" id=4]
+[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 65.4922, -65.4569, 0, 0, 0, 0, 61.6174, 296.044, 0, 0, 0, 0, 388.107, 291.963, 0, 0, 0, 0, 388.107, 97.4295, 0, 0, 0, 0, 705.074, 100.15, 0, 0, 0, 0, 699.633, 483.776, 0, 0, 0, 0, 322.809, 486.496, 0, 0, 0, 0, 327, 672.413 )
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 29.3909, 26.7036 )
+
+[node name="Level1" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+spider_bot = ExtResource( 2 )
+tower_menu = ExtResource( 3 )
+power = 100
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+position = Vector2( 0.42395, 0.83609 )
+mode = 0
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 11, 0, 1, 14, 0, 2, 11, 0, 3, 11, 0, 4, 11, 0, 5, 11, 0, 6, 11, 0, 7, 11, 0, 8, 11, 0, 9, 11, 0, 10, 11, 0, 11, 11, 0, 12, 11, 0, 13, 11, 0, 14, 11, 0, 15, 11, 0, 65536, 11, 0, 65537, 14, 0, 65538, 11, 0, 65539, 11, 0, 65540, 11, 0, 65541, 11, 0, 65542, 15, 0, 65543, 19, 0, 65544, 19, 0, 65545, 19, 0, 65546, 19, 0, 65547, 16, 0, 65548, 11, 0, 65549, 11, 0, 65550, 11, 0, 65551, 11, 0, 131072, 11, 0, 131073, 14, 0, 131074, 5, 0, 131075, 6, 0, 131076, 6, 0, 131077, 7, 0, 131078, 14, 0, 131079, 12, 0, 131080, 6, 0, 131081, 6, 0, 131082, 12, 0, 131083, 14, 0, 131084, 11, 0, 131085, 13, 0, 131086, 1610612749, 0, 131087, 13, 0, 196608, 11, 0, 196609, 14, 0, 196610, 12, 0, 196611, 9, 0, 196612, 9, 0, 196613, 10, 0, 196614, 14, 0, 196615, 1610612758, 0, 196616, 11, 0, 196617, 11, 0, 196618, 22, 0, 196619, 14, 0, 196620, 11, 0, 196621, 13, 0, 196622, 5, 0, 196623, 6, 0, 262144, 11, 0, 262145, 17, 0, 262146, 19, 0, 262147, 19, 0, 262148, 19, 0, 262149, 19, 0, 262150, 18, 0, 262151, 8, 0, 262152, 9, 0, 262153, 9, 0, 262154, 10, 0, 262155, 14, 0, 262156, 11, 0, 262157, 13, 0, 262158, 1610612758, 0, 262159, 1610612747, 0, 327680, 5, 0, 327681, 6, 0, 327682, 12, 0, 327683, 7, 0, 327684, 13, 0, 327685, 13, 0, 327686, 13, 0, 327687, 13, 0, 327688, 13, 0, 327689, 13, 0, 327690, 11, 0, 327691, -1610612715, 0, 327692, 19, 0, 327693, 13, 0, 327694, 8, 0, 327695, 9, 0, 393216, 1610612758, 0, 393217, 11, 0, 393218, 11, 0, 393219, 22, 0, 393220, 13, 0, 393221, 13, 0, 393222, 13, 0, 393223, 13, 0, 393224, 13, 0, 393225, 13, 0, 393226, 12, 0, 393227, 14, 0, 393228, 11, 0, 393229, 13, 0, 393230, 11, 0, 393231, 11, 0, 458752, 8, 0, 458753, 9, 0, 458754, 9, 0, 458755, 10, 0, 458756, 13, 0, 458757, 1610612757, 0, 458758, 19, 0, 458759, 19, 0, 458760, 19, 0, 458761, 19, 0, 458762, 19, 0, 458763, 18, 0, 458764, 5, 0, 458765, 6, 0, 458766, 6, 0, 458767, 7, 0, 524288, 11, 0, 524289, 13, 0, 524290, 13, 0, 524291, 13, 0, 524292, 13, 0, 524293, 14, 0, 524294, 12, 0, 524295, 11, 0, 524296, 11, 0, 524297, 11, 0, 524298, 11, 0, 524299, 11, 0, 524300, 1610612758, 0, 524301, 11, 0, 524302, 11, 0, 524303, 22, 0, 589824, 536870923, 0, 589825, 536870923, 0, 589826, 536870923, 0, 589827, 536870923, 0, 589828, 11, 0, 589829, 14, 0, 589830, 11, 0, 589831, 536870923, 0, 589832, 536870923, 0, 589833, 536870923, 0, 589834, 536870923, 0, 589835, 536870923, 0, 589836, 8, 0, 589837, 9, 0, 589838, 9, 0, 589839, 10, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="Path" type="Path2D" parent="." index="1"]
+
+position = Vector2( 32.1546, 1.73431 )
+curve = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path" index="0" groups=[
+"path",
+]]
+
+position = Vector2( 65.4922, -65.4569 )
+rotation = 1.58151
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = false
+lookahead = 4.0
+
+[node name="SpawnTimer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = true
+
+[node name="HUD" parent="." index="3" instance=ExtResource( 5 )]
+
+[node name="ExitZone" type="Area2D" parent="." index="4"]
+
+position = Vector2( 354.922, 646.361 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitZone" index="0"]
+
+position = Vector2( -692.551, 610.144 )
+shape = SubResource( 2 )
+
+[node name="Start Timer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+
+[connection signal="area_entered" from="ExitZone" to="." method="_on_ExitZone_area_entered"]
+
+

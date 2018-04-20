@@ -1,0 +1,127 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Levels/PrototypeLevel/PrototypeLevel.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/Arachne/Arachne.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/TowerPoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tiles/tileset1.tres" type="TileSet" id=4]
+[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -83.3949, 217.674, 0, 0, 0, 0, 1108.29, 224.476 )
+}
+
+[sub_resource type="Curve2D" id=2]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -76.593, 355.072, 0, 0, 0, 0, 198.202, 353.712, 0, 0, 0, 0, 198.202, 476.145, 0, 0, 0, 0, 708.343, 481.587, 0, 0, 0, 0, 707.845, 348.266, 0, 0, 0, 0, 957.845, 348.266, 0, 0, 0, 0, 957.845, 228.266, 0, 0, 0, 0, 1119.18, 224.476 )
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 29.3909, 26.7036 )
+
+[node name="Level4" type="Node2D"]
+
+script = ExtResource( 1 )
+spider_bot = ExtResource( 2 )
+tower_menu = ExtResource( 3 )
+power = 100
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+position = Vector2( 3.14465, -3.24503 )
+mode = 0
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 5, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 5, 6, 0, 6, 6, 0, 7, 6, 0, 8, 6, 0, 9, 6, 0, 10, 6, 0, 11, 6, 0, 12, 6, 0, 13, 6, 0, 14, 6, 0, 15, 7, 0, 65536, 1610612758, 0, 65537, 11, 0, 65538, 11, 0, 65539, 11, 0, 65540, 11, 0, 65541, 11, 0, 65542, 11, 0, 65543, 11, 0, 65544, 11, 0, 65545, 11, 0, 65546, 11, 0, 65547, 11, 0, 65548, 11, 0, 65549, 11, 0, 65550, 11, 0, 65551, 22, 0, 131072, 8, 0, 131073, 9, 0, 131074, 9, 0, 131075, 9, 0, 131076, 9, 0, 131077, 9, 0, 131078, 12, 0, 131079, 9, 0, 131080, 12, 0, 131081, 9, 0, 131082, 9, 0, 131083, 9, 0, 131084, 9, 0, 131085, 9, 0, 131086, 9, 0, 131087, 10, 0, 196608, 19, 0, 196609, 19, 0, 196610, 19, 0, 196611, 19, 0, 196612, 19, 0, 196613, 19, 0, 196614, 19, 0, 196615, 19, 0, 196616, 19, 0, 196617, 19, 0, 196618, 19, 0, 196619, 19, 0, 196620, 19, 0, 196621, 19, 0, 196622, 19, 0, 196623, 1610612757, 0, 196624, 13, 0, 262144, 12, 0, 262145, 11, 0, 262146, 11, 0, 262147, 11, 0, 262148, 11, 0, 262149, 5, 0, 262150, 6, 0, 262151, 6, 0, 262152, 6, 0, 262153, 7, 0, 262154, 11, 0, 262155, 11, 0, 262156, 11, 0, 262157, 11, 0, 262158, 12, 0, 262159, 14, 0, 327680, 19, 0, 327681, 19, 0, 327682, 19, 0, 327683, 16, 0, 327684, 11, 0, 327685, 1610612758, 0, 327686, 1610612747, 0, 327687, 11, 0, 327688, 1610612747, 0, 327689, 22, 0, 327690, 11, 0, 327691, 15, 0, 327692, 19, 0, 327693, 19, 0, 327694, 19, 0, 327695, 18, 0, 393216, 11, 0, 393217, 11, 0, 393218, 11, 0, 393219, 14, 0, 393220, 12, 0, 393221, 8, 0, 393222, 9, 0, 393223, 9, 0, 393224, 9, 0, 393225, 10, 0, 393226, 12, 0, 393227, -1610612715, 0, 393228, 5, 0, 393229, 6, 0, 393230, 7, 0, 393231, 11, 0, 458752, 11, 0, 458753, 11, 0, 458754, 11, 0, 458755, 17, 0, 458756, 19, 0, 458757, 19, 0, 458758, 19, 0, 458759, 19, 0, 458760, 19, 0, 458761, 19, 0, 458762, 19, 0, 458763, 18, 0, 458764, 1610612758, 0, 458765, 1610612747, 0, 458766, 22, 0, 458767, 11, 0, 524288, 11, 0, 524289, 11, 0, 524290, 11, 0, 524291, 11, 0, 524292, 11, 0, 524293, 11, 0, 524294, 11, 0, 524295, 11, 0, 524296, 11, 0, 524297, 11, 0, 524298, 11, 0, 524299, 11, 0, 524300, 8, 0, 524301, 9, 0, 524302, 10, 0, 524303, 11, 0, 589824, 536870923, 0, 589825, 536870923, 0, 589826, 536870923, 0, 589827, 536870923, 0, 589828, 11, 0, 589829, 11, 0, 589830, 11, 0, 589831, 536870923, 0, 589832, 536870923, 0, 589833, 536870923, 0, 589834, 536870923, 0, 589835, 11, 0, 589836, 11, 0, 589837, 11, 0, 589838, 11, 0, 589839, 1610612747, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="Path" type="Path2D" parent="." index="1"]
+
+position = Vector2( 32.1546, 1.73431 )
+curve = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path" index="0"]
+
+position = Vector2( -83.3949, 217.674 )
+rotation = 0.00570142
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = false
+lookahead = 4.0
+
+[node name="Path2" type="Path2D" parent="." index="2"]
+
+position = Vector2( 32.1546, 1.73431 )
+curve = SubResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2" index="0"]
+
+position = Vector2( -76.593, 355.072 )
+rotation = -0.004951
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = false
+lookahead = 4.0
+
+[node name="SpawnTimer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[node name="HUD" parent="." index="4" instance=ExtResource( 5 )]
+
+[node name="ExitZone" type="Area2D" parent="." index="5"]
+
+position = Vector2( 1313.65, 34.4476 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitZone" index="0"]
+
+position = Vector2( -250.565, 191.485 )
+shape = SubResource( 3 )
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+
+[connection signal="area_entered" from="ExitZone" to="." method="_on_ExitZone_area_entered"]
+
+
