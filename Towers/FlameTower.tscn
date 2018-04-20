@@ -1,0 +1,138 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Towers/FlameTower.gd" type="Script" id=1]
+[ext_resource path="res://Towers/data/000.png" type="Texture" id=2]
+[ext_resource path="res://Towers/data/003-trimmed.png" type="Texture" id=3]
+[ext_resource path="res://Towers/Flame.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Towers/data/001-trimmed.png" type="Texture" id=5]
+[ext_resource path="res://Towers/data/002-trimmed.png" type="Texture" id=6]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 137.702
+
+[node name="FlameTower" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+sight_range = 200
+rot_speed = 0.1
+DAMAGE = 50
+COST = 50
+LASER_COLOR = Color( 0.941406, 0.127731, 0.0661926, 1 )
+MAX_LEVEL = 3
+EFFECT_INTENSITY = 0.5
+EFFECT_DURATION = 1.5
+
+[node name="tower" type="Sprite" parent="." index="0"]
+
+show_behind_parent = true
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -15, -48 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="targetting_laser" type="RayCast2D" parent="tower" index="0"]
+
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, -80 )
+collision_mask = 1
+
+[node name="turret" type="Sprite" parent="tower" index="1"]
+
+position = Vector2( -0.157543, -10.0534 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Offset", "Visibility" ]
+
+[node name="Flame" parent="tower/turret" index="0" groups=[
+"flame",
+] instance=ExtResource( 4 )]
+
+visible = false
+position = Vector2( -0.356511, -18.7334 )
+z_index = -1
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="turret2" type="Sprite" parent="tower" index="2"]
+
+visible = false
+position = Vector2( -6, -22 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Flame2" parent="tower/turret2" index="0" groups=[
+"flame",
+] instance=ExtResource( 4 )]
+
+visible = false
+position = Vector2( -3.94137, -7.17424 )
+z_index = -1
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="turret3" type="Sprite" parent="tower" index="3"]
+
+visible = false
+position = Vector2( 6, -22 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Flame3" parent="tower/turret3" index="0" groups=[
+"flame",
+] instance=ExtResource( 4 )]
+
+visible = false
+position = Vector2( 2.65498, -7.56167 )
+z_index = -1
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="SensorRange" type="Area2D" parent="." index="1"]
+
+visible = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SensorRange" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="FireTimer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = false
+autostart = true
+
+[node name="FlameController" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = false
+
+[node name="BurnTimer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = true
+
+[connection signal="area_entered" from="SensorRange" to="." method="_on_SensorRange_area_entered"]
+
+[connection signal="area_exited" from="SensorRange" to="." method="_on_SensorRange_area_exited"]
+
+[connection signal="timeout" from="FireTimer" to="." method="_on_FireTimer_timeout"]
+
+[connection signal="timeout" from="FlameController" to="." method="_on_FlameController_timeout"]
+
+[connection signal="timeout" from="BurnTimer" to="." method="_on_BurnTimer_timeout"]
+
+
