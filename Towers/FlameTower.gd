@@ -59,14 +59,16 @@ func fire_at(target):
 		#	get_parent().get_parent().add_power(20)
 
 func control_flames(is_on):
-	for flame in get_tree().get_nodes_in_group("flame"):
-		is_firing=is_on
-		if(is_on):
-			if(flame.get_parent().visible):
-				flame.show()
-		else:
-			flame.hide()
-			
+	is_firing=is_on
+	if(is_on):
+		$tower/turret/Flame.show()
+		$tower/turret2/Flame.show()
+		$tower/turret3/Flame.show()
+	else:
+		$tower/turret/Flame.hide()
+		$tower/turret2/Flame.hide()
+		$tower/turret3/Flame.hide()
+
 
 
 func _on_FireTimer_timeout():

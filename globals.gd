@@ -4,4 +4,5 @@ extends Node
 # var a = 2
 # var b = "textvar"
 var energy = 0
+var menu_visible = false
 

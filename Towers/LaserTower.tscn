@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 radius = 142.733
 
-[node name="LaserTower" type="Node2D"]
+[node name="LaserTower" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 sight_range = 200
@@ -50,6 +50,9 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 "source",
 ] instance=ExtResource( 4 )]
 
+show_behind_parent = true
+_sections_unfolded = [ "Visibility" ]
+
 [node name="turret2" type="Sprite" parent="tower" index="2"]
 
 visible = false
@@ -65,7 +68,8 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 "source",
 ] instance=ExtResource( 4 )]
 
-visible = false
+show_behind_parent = true
+_sections_unfolded = [ "Visibility" ]
 
 [node name="turret3" type="Sprite" parent="tower" index="3"]
 
@@ -81,6 +85,9 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 [node name="LaserBeam" parent="tower/turret3" index="0" groups=[
 "source",
 ] instance=ExtResource( 4 )]
+
+show_behind_parent = true
+_sections_unfolded = [ "Visibility" ]
 
 [node name="SensorRange" type="Area2D" parent="." index="1"]
 

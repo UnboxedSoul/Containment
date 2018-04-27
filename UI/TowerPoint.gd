@@ -5,15 +5,19 @@ var tower
 var creatingTower = false
 
 func hide_menu():
-	z_index=0
-	$MenuTimeout.stop()
-	$AnimationPlayer.play("hide_menu")
-	remove_tower_buttons()
+	if(globals.menu_visible):
+		globals.menu_visible=false
+		z_index=0
+		$MenuTimeout.stop()
+		$AnimationPlayer.play("hide_menu")
+		remove_tower_buttons()
 
 func show_menu():
-	z_index=10
-	$MenuTimeout.start()
-	$AnimationPlayer.play("show_menu")
+	if(!globals.menu_visible):
+		globals.menu_visible=true
+		z_index=10
+		$MenuTimeout.start()
+		$AnimationPlayer.play("show_menu")
 
 func _ready():
 	pass
