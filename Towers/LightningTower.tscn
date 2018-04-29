@@ -1,27 +1,28 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Towers/LaserTower.gd" type="Script" id=1]
+[ext_resource path="res://Towers/LightningTower.gd" type="Script" id=1]
 [ext_resource path="res://Towers/data/000.png" type="Texture" id=2]
 [ext_resource path="res://Towers/data/005-trimmed.png" type="Texture" id=3]
-[ext_resource path="res://Towers/beams/LaserBeam.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Towers/beams/LightningBolt.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 142.733
 
-[node name="LaserTower" type="Node2D"]
+[node name="LightningTower" type="Node2D"]
 
 script = ExtResource( 1 )
 sight_range = 200
 rot_speed = 0.1
 DAMAGE = 10
-COST = 25
-LASER_COLOR = Color( 1, 0, 0, 1 )
+COST = 20
+LASER_COLOR = Color( 0.273542, 0.925781, 0.065094, 1 )
 MAX_LEVEL = 3
 
 [node name="tower" type="Sprite" parent="." index="0"]
 
+modulate = Color( 0.347824, 0.637351, 0.917969, 1 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
 centered = false
@@ -46,12 +47,11 @@ centered = false
 offset = Vector2( -2.5, -25 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
-[node name="LaserBeam" parent="tower/turret" index="0" groups=[
-"source",
-] instance=ExtResource( 4 )]
+[node name="LightningBolt" parent="tower/turret" index="0" instance=ExtResource( 4 )]
 
 show_behind_parent = true
 _sections_unfolded = [ "Visibility" ]
+LASER_COLOR = Color( 0.512573, 0.933043, 0.964844, 1 )
 
 [node name="turret2" type="Sprite" parent="tower" index="2"]
 
@@ -64,12 +64,11 @@ centered = false
 offset = Vector2( -2.5, -25 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
-[node name="LaserBeam" parent="tower/turret2" index="0" groups=[
-"source",
-] instance=ExtResource( 4 )]
+[node name="LightningBolt" parent="tower/turret2" index="0" instance=ExtResource( 4 )]
 
 show_behind_parent = true
 _sections_unfolded = [ "Visibility" ]
+LASER_COLOR = Color( 0.509804, 0.929412, 0.964706, 1 )
 
 [node name="turret3" type="Sprite" parent="tower" index="3"]
 
@@ -82,12 +81,11 @@ centered = false
 offset = Vector2( -2.5, -25 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
-[node name="LaserBeam" parent="tower/turret3" index="0" groups=[
-"source",
-] instance=ExtResource( 4 )]
+[node name="LightningBolt" parent="tower/turret3" index="0" instance=ExtResource( 4 )]
 
 show_behind_parent = true
 _sections_unfolded = [ "Visibility" ]
+LASER_COLOR = Color( 0.509804, 0.929412, 0.964706, 1 )
 
 [node name="SensorRange" type="Area2D" parent="." index="1"]
 

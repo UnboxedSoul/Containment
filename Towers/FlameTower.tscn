@@ -3,9 +3,10 @@
 [ext_resource path="res://Towers/FlameTower.gd" type="Script" id=1]
 [ext_resource path="res://Towers/data/000.png" type="Texture" id=2]
 [ext_resource path="res://Towers/data/003-trimmed.png" type="Texture" id=3]
-[ext_resource path="res://Towers/Flame.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Towers/beams/Flame.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Towers/data/001-trimmed.png" type="Texture" id=5]
 [ext_resource path="res://Towers/data/002-trimmed.png" type="Texture" id=6]
+
 
 [sub_resource type="CircleShape2D" id=1]
 
