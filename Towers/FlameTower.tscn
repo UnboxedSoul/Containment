@@ -7,7 +7,6 @@
 [ext_resource path="res://Towers/data/001-trimmed.png" type="Texture" id=5]
 [ext_resource path="res://Towers/data/002-trimmed.png" type="Texture" id=6]
 
-
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -83,6 +82,7 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 "flame",
 ] instance=ExtResource( 4 )]
 
+visible = false
 position = Vector2( 2.65498, -7.56167 )
 z_index = -1
 _sections_unfolded = [ "Visibility", "Z Index" ]

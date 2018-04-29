@@ -16,10 +16,11 @@ func draw_lasers():
 		var total_distance = cur_pos.distance_to($End.position)
 		var node_length = total_distance/num_nodes
 		var a = self.global_rotation
-		var angle_to_target = 0#cur_pos.angle_to_point($End.position)#-self.global_rotation
+		#-self.global_rotation
 		for i in range(0,num_nodes):
 			#Calculate the angle with variance
-			var new_angle = rotation + angle_variance/2.0+ rand_range(-(angle_variance),angle_variance/2.0)
+			var angle_to_target = cur_pos.angle_to_point($End.position)
+			var new_angle = angle_to_target + angle_variance/2.0+ rand_range(-(angle_variance),angle_variance/2.0)
 			#Calculate position of the end of the current node
 			var end_pos = calc_point_at_dist_angle(cur_pos,node_length,deg2rad(new_angle-180))
 			draw_line( #Vector2(0,0),

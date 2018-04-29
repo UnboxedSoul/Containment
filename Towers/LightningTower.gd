@@ -4,7 +4,7 @@ extends "res://Towers/Tower.gd"
 var laser_shot=-1
 var cur_target
 var is_firing=false
-
+var arc_source = load("res://Towers/beams/LightningArcSource.tscn")
 
 func _ready():
 	set_process(true)
@@ -42,6 +42,12 @@ func fire_at(target):
 		fire()
 		cur_target=target
 		target.get_ref().get_parent().damage(DAMAGE*level)
+		#Add an arc source
+		var new_arc = arc_source.instance()
+		new_arc.dmg = DAMAGE*level
+		new_arc.src = cur_target
+		target.get_ref().get_parent().add_child(new_arc)
+		new_arc.arc()
 		#if():
 		#	get_parent().get_parent().add_power(20)
 
