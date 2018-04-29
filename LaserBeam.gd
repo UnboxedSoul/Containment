@@ -33,7 +33,7 @@ func fire(duration):
 	laser_visible_time=duration
 	on=true
 	last_shot=OS.get_ticks_msec()
-	$FireTimer.wait_time=(duration/1000)
+	$FireTimer.wait_time=(duration/1000.0)
 	$FireTimer.start()
 
 func set_start(pos):

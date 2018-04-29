@@ -33,9 +33,9 @@ func _on_SensorRange_area_exited( area ):
 		AvailableTargets.remove(area_index)
 
 func fire():
-	$tower/turret/LaserBeam.fire(200)
-	$tower/turret2/LaserBeam.fire(200)
-	$tower/turret3/LaserBeam.fire(200)
+	$tower/turret/LaserBeam.fire(200.0)
+	$tower/turret2/LaserBeam.fire(200.0)
+	$tower/turret3/LaserBeam.fire(200.0)
 
 func fire_at(target):
 	if(target.get_ref()):
