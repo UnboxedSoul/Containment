@@ -128,7 +128,7 @@ tracks/8/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="TowerPoint" type="Node2D" groups=[
+[node name="TowerPoint" type="Node2D" index="0" groups=[
 "tower_points",
 ]]
 
@@ -157,6 +157,7 @@ margin_top = -32.0
 margin_right = 32.0
 margin_bottom = 32.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 focus_mode = 1
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -182,6 +183,8 @@ margin_right = 99.0
 margin_bottom = 128.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -208,6 +211,8 @@ margin_right = 99.0
 margin_bottom = 96.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -234,6 +239,8 @@ margin_right = 99.0
 margin_bottom = 160.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
