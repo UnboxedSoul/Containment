@@ -49,7 +49,7 @@ func create_tower_buttons():
 			tower_sprite.scale = Vector2(1.5,1.5)
 			tower_button.add_child(tower_sprite)
 			#Add cost labels
-			var cost_label = Label.new()
+			var cost_label = load('res://UI/CostLabel.tscn').instance()
 			cost_label.text = str(tower.instance().COST)
 			tower_button.add_child(cost_label)
 			var tower_position = Vector2(132*cos(deg2rad((30)*i-90)),132*sin(deg2rad((30)*i-90)))
