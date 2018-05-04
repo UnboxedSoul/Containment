@@ -48,6 +48,8 @@ func fire_at(target):
 		new_arc.src = cur_target
 		target.get_ref().get_parent().add_child(new_arc)
 		new_arc.arc()
+		#if():
+		#	get_parent().get_parent().add_power(20)
 
 func _on_FireTimer_timeout():
 	if(AvailableTargets.size()>0):

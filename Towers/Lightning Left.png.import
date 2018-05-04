@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Lightning Left.png-e9a6f18d964cb0186dcf08687f708f00.stex"
+
+[deps]
+
+source_file="res://Towers/Lightning Left.png"
+source_md5="21443874dc19a2950b99b86a2111764f"
+
+dest_files=[ "res://.import/Lightning Left.png-e9a6f18d964cb0186dcf08687f708f00.stex" ]
+dest_md5="7e3469bf55877c2030dc9a794d8b8182"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

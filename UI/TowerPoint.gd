@@ -45,14 +45,14 @@ func create_tower_buttons():
 			var tower_sprite = Sprite.new()
 			tower_sprite.centered=false
 			tower_sprite.texture=tower.instance().get_tower_sprite()
-			tower_sprite.set_position(Vector2(16,8))
+			tower_sprite.set_position(Vector2(0,-30))
 			tower_sprite.scale = Vector2(1.5,1.5)
 			tower_button.add_child(tower_sprite)
 			#Add cost labels
 			var cost_label = load('res://UI/CostLabel.tscn').instance()
 			cost_label.text = str(tower.instance().COST)
 			tower_button.add_child(cost_label)
-			var tower_position = Vector2(132*cos(deg2rad((30)*i-90)),132*sin(deg2rad((30)*i-90)))
+			var tower_position = Vector2(150*cos(deg2rad((30)*i-90)),150*sin(deg2rad((30)*i-90)))
 			tower_button.set_position(tower_position)
 			tower_button.connect("pressed",self,"spawn_tower",[tower])
 		

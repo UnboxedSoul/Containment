@@ -2,7 +2,7 @@
 
 [ext_resource path="res://UI/TowerPoint.gd" type="Script" id=1]
 [ext_resource path="res://Towers/LaserTower.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Towers/MagneTower.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Towers/SlowDownTower.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Towers/FlameTower.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Towers/LightningTower.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/menu_animations.tres" type="Animation" id=6]
@@ -13,6 +13,7 @@
 [ext_resource path="res://UI/remove_button_pressed.png" type="Texture" id=11]
 [ext_resource path="res://UI/upgrade_button.png" type="Texture" id=12]
 [ext_resource path="res://UI/upgrade_button_pressed.png" type="Texture" id=13]
+
 
 [sub_resource type="Animation" id=1]
 

@@ -1,29 +1,29 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Towers/LightningTower.gd" type="Script" id=1]
-[ext_resource path="res://Towers/data/LightningTowerIcon.png" type="Texture" id=2]
+[ext_resource path="res://Towers/MagneTower.gd" type="Script" id=1]
+[ext_resource path="res://Towers/data/SlowDownTowerIcon.png" type="Texture" id=2]
 [ext_resource path="res://Towers/data/TowerBase.png" type="Texture" id=3]
 [ext_resource path="res://Towers/data/TowerColor.png" type="Texture" id=4]
-[ext_resource path="res://Towers/data/TeslaCoil.png" type="Texture" id=5]
-[ext_resource path="res://Towers/beams/LightningBolt.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Towers/data/LightningLeft.png" type="Texture" id=7]
-[ext_resource path="res://Towers/data/LightningRight.png" type="Texture" id=8]
+[ext_resource path="res://Towers/data/SlowDown.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 142.733
+radius = 137.702
 
-[node name="LightningTower" type="Node2D" index="0"]
+[node name="MagneTower" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
 sight_range = 200
 rot_speed = 0.1
 DAMAGE = 10
 COST = 20
-LASER_COLOR = Color( 0.273542, 0.925781, 0.065094, 1 )
+LASER_COLOR = Color( 0.230713, 0.751219, 0.820312, 1 )
 MAX_LEVEL = 3
 icon = ExtResource( 2 )
+EFFECT_INTENSITY = 0.5
+EFFECT_DURATION = 1.5
 
 [node name="tower" type="Sprite" parent="." index="0"]
 
@@ -31,76 +31,51 @@ scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
 centered = false
 offset = Vector2( -14.5, -14.5 )
-_sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="targetting_laser" type="RayCast2D" parent="tower" index="0"]
 
-visible = false
-position = Vector2( -0.201324, -2.2769 )
 enabled = false
 exclude_parent = true
 cast_to = Vector2( 0, -200 )
 collision_mask = 1
-_sections_unfolded = [ "Transform" ]
 
 [node name="towerColor" type="Sprite" parent="tower" index="1"]
 
+modulate = Color( 0.180392, 0.760784, 0.8, 1 )
 position = Vector2( 0, 3 )
 texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="turret" type="Sprite" parent="tower" index="2"]
 
 show_behind_parent = true
-position = Vector2( -0.25, -9.5 )
+position = Vector2( 0, -17.5 )
+z_index = 1
 texture = ExtResource( 5 )
-centered = false
-offset = Vector2( -6.25, -29 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
-
-[node name="LightningBolt" parent="tower/turret" index="0" instance=ExtResource( 6 )]
-
-show_behind_parent = true
-position = Vector2( 0.25, -19 )
-_sections_unfolded = [ "Transform", "Visibility" ]
-LASER_COLOR = Color( 1, 1, 1, 1 )
 
 [node name="turret2" type="Sprite" parent="tower" index="3"]
 
 visible = false
 show_behind_parent = true
-position = Vector2( -8, -9.5 )
-texture = ExtResource( 7 )
-centered = false
-offset = Vector2( -2.5, -25 )
+position = Vector2( 0, -22.5 )
+z_index = 2
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
-
-[node name="LightningBolt" parent="tower/turret2" index="0" instance=ExtResource( 6 )]
-
-show_behind_parent = true
-position = Vector2( 1.5, -15 )
-_sections_unfolded = [ "Transform", "Visibility" ]
-LASER_COLOR = Color( 0.509804, 0.929412, 0.964706, 1 )
 
 [node name="turret3" type="Sprite" parent="tower" index="4"]
 
 visible = false
 show_behind_parent = true
-position = Vector2( 8, -9.5 )
-texture = ExtResource( 8 )
-centered = false
-offset = Vector2( -2.5, -25 )
+position = Vector2( 0, -27.5 )
+z_index = 3
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
-
-[node name="LightningBolt" parent="tower/turret3" index="0" instance=ExtResource( 6 )]
-
-show_behind_parent = true
-position = Vector2( -1.5, -15 )
-_sections_unfolded = [ "Transform", "Visibility" ]
-LASER_COLOR = Color( 0.509804, 0.929412, 0.964706, 1 )
 
 [node name="SensorRange" type="Area2D" parent="." index="1"]
 
+editor/display_folded = true
 visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -119,7 +94,7 @@ shape = SubResource( 1 )
 [node name="FireTimer" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 0.5
+wait_time = 1.0
 one_shot = false
 autostart = true
 
