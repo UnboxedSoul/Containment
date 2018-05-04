@@ -2,7 +2,7 @@ extends Node2D
 
 var laser_visible_time = 200.0
 var last_shot=0
-export (Color) var LASER_COLOR=Color(1.0,1.0,1.0,1.0)
+export (Color) var LASER_COLOR=Color(1.0,0,0,1.0)
 export (bool) var on = false
 export (int) var num_nodes = 10.0
 export (int) var angle_variance = 30.0

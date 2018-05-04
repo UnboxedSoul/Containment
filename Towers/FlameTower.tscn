@@ -1,18 +1,20 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Towers/FlameTower.gd" type="Script" id=1]
-[ext_resource path="res://Towers/data/000.png" type="Texture" id=2]
-[ext_resource path="res://Towers/data/003-trimmed.png" type="Texture" id=3]
-[ext_resource path="res://Towers/beams/Flame.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Towers/data/001-trimmed.png" type="Texture" id=5]
-[ext_resource path="res://Towers/data/002-trimmed.png" type="Texture" id=6]
+[ext_resource path="res://Towers/data/FlameTowerIcon.png" type="Texture" id=2]
+[ext_resource path="res://Towers/data/TowerBase.png" type="Texture" id=3]
+[ext_resource path="res://Towers/data/TowerColor.png" type="Texture" id=4]
+[ext_resource path="res://Towers/data/FlameThrowerBig.png" type="Texture" id=5]
+[ext_resource path="res://Towers/beams/Flame.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Towers/data/FlameThrowerSmallLeft.png" type="Texture" id=7]
+[ext_resource path="res://Towers/data/FlameThrowerSmallRight.png" type="Texture" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 137.702
 
-[node name="FlameTower" type="Node2D"]
+[node name="FlameTower" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 sight_range = 200
@@ -21,6 +23,7 @@ DAMAGE = 50
 COST = 50
 LASER_COLOR = Color( 0.941406, 0.127731, 0.0661926, 1 )
 MAX_LEVEL = 3
+icon = ExtResource( 2 )
 EFFECT_INTENSITY = 0.5
 EFFECT_DURATION = 1.5
 
@@ -28,9 +31,9 @@ EFFECT_DURATION = 1.5
 
 show_behind_parent = true
 scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 centered = false
-offset = Vector2( -15, -48 )
+offset = Vector2( -14.5, -14.5 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="targetting_laser" type="RayCast2D" parent="tower" index="0"]
@@ -40,47 +43,57 @@ exclude_parent = true
 cast_to = Vector2( 0, -80 )
 collision_mask = 1
 
-[node name="turret" type="Sprite" parent="tower" index="1"]
+[node name="towerColor" type="Sprite" parent="tower" index="1"]
 
-position = Vector2( -0.157543, -10.0534 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset", "Visibility" ]
+modulate = Color( 1, 0.494118, 0, 1 )
+position = Vector2( 0, 3 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="turret" type="Sprite" parent="tower" index="2"]
+
+editor/display_folded = true
+position = Vector2( 0, -12 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Flame" parent="tower/turret" index="0" groups=[
 "flame",
-] instance=ExtResource( 4 )]
+] instance=ExtResource( 6 )]
 
 visible = false
 position = Vector2( -0.356511, -18.7334 )
 z_index = -1
 _sections_unfolded = [ "Visibility", "Z Index" ]
 
-[node name="turret2" type="Sprite" parent="tower" index="2"]
+[node name="turret2" type="Sprite" parent="tower" index="3"]
 
+editor/display_folded = true
 visible = false
-position = Vector2( -6, -22 )
-texture = ExtResource( 5 )
+position = Vector2( -5.5, -23 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Flame" parent="tower/turret2" index="0" groups=[
 "flame",
-] instance=ExtResource( 4 )]
+] instance=ExtResource( 6 )]
 
 visible = false
 position = Vector2( -3.94137, -7.17424 )
 z_index = -1
 _sections_unfolded = [ "Visibility", "Z Index" ]
 
-[node name="turret3" type="Sprite" parent="tower" index="3"]
+[node name="turret3" type="Sprite" parent="tower" index="4"]
 
+editor/display_folded = true
 visible = false
-position = Vector2( 6, -22 )
-texture = ExtResource( 6 )
+position = Vector2( 5.5, -23 )
+texture = ExtResource( 8 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Flame" parent="tower/turret3" index="0" groups=[
 "flame",
-] instance=ExtResource( 4 )]
+] instance=ExtResource( 6 )]
 
 visible = false
 position = Vector2( 2.65498, -7.56167 )
