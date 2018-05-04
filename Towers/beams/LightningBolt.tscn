@@ -1,12 +1,14 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://LaserBeam.gd" type="Script" id=1]
+[ext_resource path="res://Towers/beams/LightningBolt.gd" type="Script" id=1]
 
-[node name="LaserBeam" type="Node2D"]
+[node name="LightningBolt" type="Node2D"]
 
 script = ExtResource( 1 )
-LASER_COLOR = Color( 0.124695, 0.886719, 0.850999, 1 )
-on = true
+LASER_COLOR = Color( 1, 0, 0, 1 )
+on = false
+num_nodes = 10.0
+angle_variance = 30.0
 
 [node name="Start" type="Position2D" parent="." index="0"]
 

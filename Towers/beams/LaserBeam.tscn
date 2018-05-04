@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Towers/beams/LaserBeam.gd" type="Script" id=1]
+
+[node name="LaserBeam" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+LASER_COLOR = Color( 0.124695, 0.886719, 0.850999, 1 )
+on = true
+
+[node name="Start" type="Position2D" parent="." index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="End" type="Position2D" parent="." index="1"]
+
+position = Vector2( 0, -10 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="FireTimer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="FireTimer" to="." method="_on_FireTimer_timeout"]
+
+
