@@ -69,14 +69,14 @@ func _on_StartTimer_timeout():
 		$SpawnTimer.start()
 
 func _on_btnStartWave_pressed():
-	cur_wave+=1
-	StartNewWave()
-	
+	cur_wave=clamp(cur_wave+1,0,waves.size()-1)
 	if(cur_wave<waves.size()):
+		StartNewWave()
 		num_enemies = waves[cur_wave]
 		$SpawnTimer.wait_time=wave_spawn_delays[cur_wave]
 		update_hud()
 		$SpawnTimer.start()
+	
 		
 func StartNewWave():
 	num_enemies = 0
