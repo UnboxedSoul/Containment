@@ -51,7 +51,6 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
 show_behind_parent = true
 _sections_unfolded = [ "Visibility" ]
-LASER_COLOR = Color( 0.512573, 0.933043, 0.964844, 1 )
 
 [node name="turret2" type="Sprite" parent="tower" index="2"]
 
@@ -68,7 +67,6 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
 show_behind_parent = true
 _sections_unfolded = [ "Visibility" ]
-LASER_COLOR = Color( 0.509804, 0.929412, 0.964706, 1 )
 
 [node name="turret3" type="Sprite" parent="tower" index="3"]
 
@@ -85,7 +83,6 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
 show_behind_parent = true
 _sections_unfolded = [ "Visibility" ]
-LASER_COLOR = Color( 0.509804, 0.929412, 0.964706, 1 )
 
 [node name="SensorRange" type="Area2D" parent="." index="1"]
 
