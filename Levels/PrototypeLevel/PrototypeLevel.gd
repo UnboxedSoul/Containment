@@ -58,6 +58,8 @@ func _on_SpawnTimer_timeout():
 
 func _on_ExitZone_area_entered( area ):
 	health-=1
+	enemy_count-=1
+	area.get_parent().queue_free()
 	update_hud()
 
 func _on_StartTimer_timeout():
