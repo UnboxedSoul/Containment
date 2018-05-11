@@ -33,6 +33,7 @@ func _on_SensorRange_area_exited( area ):
 		AvailableTargets.remove(area_index)
 
 func fire():
+	$ShootSound.play()
 	$tower/turret/LightningBolt.fire(200.0)
 	$tower/turret2/LightningBolt.fire(200.0)
 	$tower/turret3/LightningBolt.fire(200.0)

@@ -34,7 +34,7 @@ use_filter = false
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="PrototypeLevel" type="Node2D" index="0"]
+[node name="PrototypeLevel" type="Node2D"]
 
 script = ExtResource( 1 )
 spider_bot = ExtResource( 2 )
@@ -156,6 +156,7 @@ margin_top = 194.0
 margin_right = 707.0
 margin_bottom = 247.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0

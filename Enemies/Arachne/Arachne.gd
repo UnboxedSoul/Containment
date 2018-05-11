@@ -17,6 +17,7 @@ func damage(dmg):
 	health-=dmg
 	$health_bar_green.scale=Vector2(1,health/MAX_HEALTH)
 	if(health<=0):
+		$DeathSound.play()
 		$AnimatedSprite.play("die")
 		dead=true
 		$Area2D.queue_free()

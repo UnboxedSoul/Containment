@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Towers/LaserTower.gd" type="Script" id=1]
 [ext_resource path="res://Towers/data/LaserTowerIcon.png" type="Texture" id=2]
@@ -6,13 +6,14 @@
 [ext_resource path="res://Towers/data/TowerColor.png" type="Texture" id=4]
 [ext_resource path="res://Towers/data/Laser.png" type="Texture" id=5]
 [ext_resource path="res://Towers/beams/LaserBeam.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sounds/LaserTowerShoot.wav" type="AudioStream" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 142.733
 
-[node name="LaserTower" type="Node2D" index="0"]
+[node name="LaserTower" type="Node2D"]
 
 script = ExtResource( 1 )
 sight_range = 200
@@ -25,6 +26,7 @@ icon = ExtResource( 2 )
 
 [node name="tower" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
 centered = false
@@ -99,6 +101,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="SensorRange" type="Area2D" parent="." index="1"]
 
+editor/display_folded = true
 visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -120,6 +123,16 @@ process_mode = 1
 wait_time = 0.5
 one_shot = false
 autostart = true
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="SensorRange" to="." method="_on_SensorRange_area_entered"]
 

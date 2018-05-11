@@ -6,9 +6,9 @@ var laser_shot=-1
 var cur_target
 var is_firing=false
 
-
 func _ready():
 	set_process(true)
+	$ShootSound.play()
 
 func _process(delta):
 	update()
