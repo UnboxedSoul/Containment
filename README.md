@@ -1,4 +1,8 @@
 # Containment
+cd ~/devel/src/Containment/
+
+Then the following will work
+
 First make a new branch to store your changes in:
 git checkout -b branch_name
 
