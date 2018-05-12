@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/LighningTowerShoot.wav-04897d184a8fd9396017c1bbd65b6725.sample"
+
+[deps]
+
+source_file="res://Sounds/LighningTowerShoot.wav"
+source_md5="77a24c1f2b71feac846df29e9b2deb99"
+
+dest_files=[ "res://.import/LighningTowerShoot.wav-04897d184a8fd9396017c1bbd65b6725.sample" ]
+dest_md5="119f04b21fe4cb7d3633feb516aff012"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

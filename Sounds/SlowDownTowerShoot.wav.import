@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SlowDownTowerShoot.wav-a1fc3f00c1f46e2bbb97779703e53f57.sample"
+
+[deps]
+
+source_file="res://Sounds/SlowDownTowerShoot.wav"
+source_md5="cc07058b1d28adbc341476c5ccdc07e7"
+
+dest_files=[ "res://.import/SlowDownTowerShoot.wav-a1fc3f00c1f46e2bbb97779703e53f57.sample" ]
+dest_md5="2c84d42871b14e1dfeb32f99c3e8211a"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

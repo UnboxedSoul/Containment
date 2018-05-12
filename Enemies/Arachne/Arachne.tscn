@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Enemies/Arachne/Arachne.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Arachne/arachn_Arachne_Walk_000.png" type="Texture" id=2]
@@ -15,7 +15,6 @@
 [ext_resource path="res://UI/health_bar_red.png" type="Texture" id=13]
 [ext_resource path="res://UI/health_bar_green.png" type="Texture" id=14]
 [ext_resource path="res://Towers/beams/BurningFire.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Sounds/SpiderDead.wav" type="AudioStream" id=16]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -47,7 +46,7 @@ MAX_HEALTH = 100.0
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 2
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -105,16 +104,6 @@ process_mode = 1
 wait_time = 0.5
 one_shot = false
 autostart = false
-
-[node name="DeathSound" type="AudioStreamPlayer2D" parent="." index="8"]
-
-stream = ExtResource( 16 )
-volume_db = 0.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
 
 [connection signal="timeout" from="DecayTimer" to="." method="_on_DecayTimer_timeout"]
 

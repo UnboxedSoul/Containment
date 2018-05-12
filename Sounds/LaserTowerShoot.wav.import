@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/LaserTowerShoot.wav-60e2a5c479c7ddc522a1c09ad573c661.sample"
+
+[deps]
+
+source_file="res://Sounds/LaserTowerShoot.wav"
+source_md5="f3338c7fc86d967086f3d109562fd9b1"
+
+dest_files=[ "res://.import/LaserTowerShoot.wav-60e2a5c479c7ddc522a1c09ad573c661.sample" ]
+dest_md5="1f1602d4c771b615f8376f1abeb41ca0"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

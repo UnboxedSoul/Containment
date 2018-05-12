@@ -8,7 +8,6 @@ var is_firing=false
 
 func _ready():
 	set_process(true)
-	$ShootSound.play()
 
 func _process(delta):
 	update()
