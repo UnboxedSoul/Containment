@@ -6,6 +6,7 @@ var laser_shot=-1
 var cur_target_index=0
 var cur_target
 var is_firing=false
+var _delta
 
 func increment_target():
 	if(AvailableTargets.size()>0):
@@ -19,12 +20,13 @@ func _ready():
 	set_process(true)
 
 func _process(delta):
-	update()
+	_delta = delta
 	
+	update()
 
 func aim_at(target_pos):
 	var aim = global_position.angle_to_point(target_pos)-deg2rad(90)
-	rotation=aim
+	rotation = aim
 
 func _on_SensorRange_area_entered( area ):
 	AvailableTargets.append(area)
@@ -54,7 +56,9 @@ func fire_at(target):
 	if(target.get_ref()):
 		var target_obj = target.get_ref().get_parent()
 		cur_target=target
-		target_obj.burn_for(DAMAGE*level)
+		
+		if(target_obj.health > 0):
+			target_obj.burn_for(DAMAGE*level)
 		#if():
 		#	get_parent().get_parent().add_power(20)
 

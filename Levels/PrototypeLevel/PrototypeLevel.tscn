@@ -40,7 +40,7 @@ script = ExtResource( 1 )
 spider_bot = ExtResource( 2 )
 tower_menu = ExtResource( 3 )
 power = 100
-waves = [ 5, 10, 15, 20, 50, 100 ]
+waves = [ 5, 10 ]
 wave_spawn_delays = [ 1, 1, 0.5, 0.5, 0.25, 0.25 ]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]

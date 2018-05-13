@@ -6,7 +6,7 @@ var AvailableTargets = []
 export var DAMAGE=10
 export var COST=20
 export (Color) var LASER_COLOR=Color(1.0,0,0,1.0)
-var level=1
+var level=1.0
 export var MAX_LEVEL=3
 export (Texture)var icon
 

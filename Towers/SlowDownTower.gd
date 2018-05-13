@@ -5,18 +5,21 @@ export var EFFECT_DURATION=1.5
 var laser_shot=-1
 var cur_target
 var is_firing=false
+var _delta
 
 func _ready():
 	set_process(true)
 
 func _process(delta):
+	_delta = delta
+	
 	update()
 	if(AvailableTargets.size()>0):
 		aim_at(AvailableTargets[0].global_position)
 
 func aim_at(target_pos):
 	var aim = global_position.angle_to_point(target_pos)-deg2rad(90)
-	rotation=aim
+	rotation = aim
 
 func _on_SensorRange_area_entered( area ):
 	AvailableTargets.append(area)
@@ -46,7 +49,11 @@ func fire_at(target):
 	if(target.get_ref()):
 		var target_obj = target.get_ref().get_parent()
 		cur_target=target
-		target_obj.damage(DAMAGE)
+		
+		if(target_obj.health > 0):
+			target_obj.damage(DAMAGE)
+		
+		$ShootSound.play()
 		#if():
 			#If the above damage call returns true, then the enemy died
 			#So, add 20 energy to the player's score
