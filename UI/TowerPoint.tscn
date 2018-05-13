@@ -6,7 +6,7 @@
 [ext_resource path="res://Towers/FlameTower.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Towers/LightningTower.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/menu_animations.tres" type="Animation" id=6]
-[ext_resource path="res://Tiles/tileset_12.png" type="Texture" id=7]
+[ext_resource path="res://Tiles/Road/TowerPoint.png" type="Texture" id=7]
 [ext_resource path="res://UI/add_button.png" type="Texture" id=8]
 [ext_resource path="res://UI/add_button_pressed.png" type="Texture" id=9]
 [ext_resource path="res://UI/remove_button.png" type="Texture" id=10]
@@ -130,7 +130,7 @@ tracks/8/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="TowerPoint" type="Node2D" groups=[
+[node name="TowerPoint" type="Node2D" index="0" groups=[
 "tower_points",
 ]]
 
