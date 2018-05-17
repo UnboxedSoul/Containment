@@ -7,7 +7,7 @@ path="res://.import/RoadVertical.png-dd866abdcf282436aff0cc3741fcf6fa.stex"
 [deps]
 
 source_file="res://Tiles/Road/RoadVertical.png"
-source_md5="73e9358b3c473e1aba30e37e5186b686"
+source_md5="6117106a9ad1d329a11bf6857f150da1"
 
 dest_files=[ "res://.import/RoadVertical.png-dd866abdcf282436aff0cc3741fcf6fa.stex" ]
 dest_md5="f66ff037e75d1ff55e6630428f172695"

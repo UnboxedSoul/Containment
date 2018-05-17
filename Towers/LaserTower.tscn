@@ -16,6 +16,7 @@ radius = 142.733
 [node name="LaserTower" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 sight_range = 200
 rot_speed = 0.1
 DAMAGE = 10
