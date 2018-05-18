@@ -5,8 +5,8 @@
 [node name="LaserBeam" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
-LASER_COLOR = Color( 0.124695, 0.886719, 0.850999, 1 )
-on = true
+LASER_COLOR = Color( 0, 0, 0, 0 )
+on = false
 
 [node name="Start" type="Position2D" parent="." index="0"]
 

@@ -38,9 +38,14 @@ func add_power(amt):
 
 func _process(delta):
 	update_hud()
+	
+	if(cur_wave==waves.size()-1):
+		$btnStartWave.hide()
+		return
+		
 	if(enemy_count <= 0):
 		$btnStartWave.show()
-	else:
+	else:		
 		$btnStartWave.hide()
 		
 func _on_SpawnTimer_timeout():
@@ -53,7 +58,6 @@ func _on_SpawnTimer_timeout():
 		num_enemies-=1
 	else:
 		$SpawnTimer.stop()
-		$btnStartWave.show()
 		#$StartTimer.start()
 
 func _on_ExitZone_area_entered( area ):
@@ -62,23 +66,13 @@ func _on_ExitZone_area_entered( area ):
 	area.get_parent().queue_free()
 	update_hud()
 
-func _on_StartTimer_timeout():
-	cur_wave+=1
-	if(cur_wave<waves.size()):
-		num_enemies = waves[cur_wave]
-		$SpawnTimer.wait_time=wave_spawn_delays[cur_wave]
-		update_hud()
-		$SpawnTimer.start()
-
 func _on_btnStartWave_pressed():
-	cur_wave=clamp(cur_wave+1,0,waves.size()-1)
-	if(cur_wave<waves.size()):
-		StartNewWave()
-		num_enemies = waves[cur_wave]
-		$SpawnTimer.wait_time=wave_spawn_delays[cur_wave]
-		update_hud()
-		$SpawnTimer.start()
-	
+	cur_wave+=1
+	StartNewWave()
+	num_enemies = waves[cur_wave]
+	$SpawnTimer.wait_time=wave_spawn_delays[cur_wave]
+	update_hud()
+	$SpawnTimer.start()
 		
 func StartNewWave():
 	num_enemies = 0

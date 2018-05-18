@@ -1,35 +1,22 @@
-[gd_resource type="TileSet" load_steps=26 format=2]
+[gd_resource type="TileSet" load_steps=14 format=2]
 
-[ext_resource path="res://Tiles/tileset.png" type="Texture" id=1]
-[ext_resource path="res://Tiles/tileset_1.png" type="Texture" id=2]
-[ext_resource path="res://Tiles/tileset_10.png" type="Texture" id=3]
-[ext_resource path="res://Tiles/tileset_11.png" type="Texture" id=4]
-[ext_resource path="res://Tiles/tileset_12.png" type="Texture" id=5]
-[ext_resource path="res://Tiles/tileset_13.png" type="Texture" id=6]
-[ext_resource path="res://Tiles/tileset_14.png" type="Texture" id=7]
-[ext_resource path="res://Tiles/tileset_15.png" type="Texture" id=8]
-[ext_resource path="res://Tiles/tileset_16.png" type="Texture" id=9]
-[ext_resource path="res://Tiles/tileset_17.png" type="Texture" id=10]
-[ext_resource path="res://Tiles/tileset_18.png" type="Texture" id=11]
-[ext_resource path="res://Tiles/tileset_19.png" type="Texture" id=12]
-[ext_resource path="res://Tiles/tileset_2.png" type="Texture" id=13]
-[ext_resource path="res://Tiles/tileset_20.png" type="Texture" id=14]
-[ext_resource path="res://Tiles/tileset_21.png" type="Texture" id=15]
-[ext_resource path="res://Tiles/tileset_22.png" type="Texture" id=16]
-[ext_resource path="res://Tiles/tileset_23.png" type="Texture" id=17]
-[ext_resource path="res://Tiles/tileset_24.png" type="Texture" id=18]
-[ext_resource path="res://Tiles/tileset_3.png" type="Texture" id=19]
-[ext_resource path="res://Tiles/tileset_4.png" type="Texture" id=20]
-[ext_resource path="res://Tiles/tileset_5.png" type="Texture" id=21]
-[ext_resource path="res://Tiles/tileset_6.png" type="Texture" id=22]
-[ext_resource path="res://Tiles/tileset_7.png" type="Texture" id=23]
-[ext_resource path="res://Tiles/tileset_8.png" type="Texture" id=24]
-[ext_resource path="res://Tiles/tileset_9.png" type="Texture" id=25]
+[ext_resource path="res://Tiles/Road/Dirt.png" type="Texture" id=1]
+[ext_resource path="res://Tiles/Road/TowerPoint.png" type="Texture" id=2]
+[ext_resource path="res://Tiles/Road/RoadVertical.png" type="Texture" id=3]
+[ext_resource path="res://Tiles/Road/RoadTopRight.png" type="Texture" id=4]
+[ext_resource path="res://Tiles/Road/RoadTopLeft.png" type="Texture" id=5]
+[ext_resource path="res://Tiles/Road/RoadBottomRight.png" type="Texture" id=6]
+[ext_resource path="res://Tiles/Road/RoadBottomLeft.png" type="Texture" id=7]
+[ext_resource path="res://Tiles/Road/RoadHorizontal.png" type="Texture" id=8]
+[ext_resource path="res://Tiles/Road/RoadX.png" type="Texture" id=9]
+[ext_resource path="res://Tiles/Road/RoadTTop.png" type="Texture" id=10]
+[ext_resource path="res://Tiles/Road/RoadTBottom.png" type="Texture" id=11]
+[ext_resource path="res://Tiles/Road/RoadTLeft.png" type="Texture" id=12]
+[ext_resource path="res://Tiles/Road/RoadTRight.png" type="Texture" id=13]
 
 [resource]
 
 0/name = "tileset"
-0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 64, 64 )
@@ -38,7 +25,6 @@
 0/navigation_offset = Vector2( 32, 32 )
 0/shapes = [  ]
 1/name = "tileset_1"
-1/texture = ExtResource( 2 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 64, 64 )
@@ -47,7 +33,6 @@
 1/navigation_offset = Vector2( 32, 32 )
 1/shapes = [  ]
 2/name = "tileset_2"
-2/texture = ExtResource( 13 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 0, 0, 64, 64 )
@@ -56,7 +41,6 @@
 2/navigation_offset = Vector2( 32, 32 )
 2/shapes = [  ]
 3/name = "tileset_3"
-3/texture = ExtResource( 19 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 0, 64, 64 )
@@ -65,7 +49,6 @@
 3/navigation_offset = Vector2( 32, 32 )
 3/shapes = [  ]
 4/name = "tileset_4"
-4/texture = ExtResource( 20 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 0, 64, 64 )
@@ -74,7 +57,6 @@
 4/navigation_offset = Vector2( 32, 32 )
 4/shapes = [  ]
 5/name = "tileset_5"
-5/texture = ExtResource( 21 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 0, 0, 64, 64 )
@@ -83,7 +65,6 @@
 5/navigation_offset = Vector2( 32, 32 )
 5/shapes = [  ]
 6/name = "tileset_6"
-6/texture = ExtResource( 22 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 0, 64, 64 )
@@ -92,7 +73,6 @@
 6/navigation_offset = Vector2( 32, 32 )
 6/shapes = [  ]
 7/name = "tileset_7"
-7/texture = ExtResource( 23 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 0, 0, 64, 64 )
@@ -101,7 +81,6 @@
 7/navigation_offset = Vector2( 32, 32 )
 7/shapes = [  ]
 8/name = "tileset_8"
-8/texture = ExtResource( 24 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 0, 0, 64, 64 )
@@ -110,7 +89,6 @@
 8/navigation_offset = Vector2( 32, 32 )
 8/shapes = [  ]
 9/name = "tileset_9"
-9/texture = ExtResource( 25 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 0, 64, 64 )
@@ -119,7 +97,6 @@
 9/navigation_offset = Vector2( 32, 32 )
 9/shapes = [  ]
 10/name = "tileset_10"
-10/texture = ExtResource( 3 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 0, 0, 64, 64 )
@@ -128,7 +105,7 @@
 10/navigation_offset = Vector2( 32, 32 )
 10/shapes = [  ]
 11/name = "tileset_11"
-11/texture = ExtResource( 4 )
+11/texture = ExtResource( 1 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 0, 0, 64, 64 )
@@ -137,7 +114,7 @@
 11/navigation_offset = Vector2( 32, 32 )
 11/shapes = [  ]
 12/name = "tileset_12"
-12/texture = ExtResource( 5 )
+12/texture = ExtResource( 2 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 0, 0, 64, 64 )
@@ -146,7 +123,6 @@
 12/navigation_offset = Vector2( 32, 32 )
 12/shapes = [  ]
 13/name = "tileset_13"
-13/texture = ExtResource( 6 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 0, 0, 64, 64 )
@@ -155,7 +131,7 @@
 13/navigation_offset = Vector2( 32, 32 )
 13/shapes = [  ]
 14/name = "tileset_14"
-14/texture = ExtResource( 7 )
+14/texture = ExtResource( 3 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 0, 0, 64, 64 )
@@ -164,7 +140,7 @@
 14/navigation_offset = Vector2( 32, 32 )
 14/shapes = [  ]
 15/name = "tileset_15"
-15/texture = ExtResource( 8 )
+15/texture = ExtResource( 4 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
 15/region = Rect2( 0, 0, 64, 64 )
@@ -173,7 +149,7 @@
 15/navigation_offset = Vector2( 32, 32 )
 15/shapes = [  ]
 16/name = "tileset_16"
-16/texture = ExtResource( 9 )
+16/texture = ExtResource( 5 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
 16/region = Rect2( 0, 0, 64, 64 )
@@ -182,7 +158,7 @@
 16/navigation_offset = Vector2( 32, 32 )
 16/shapes = [  ]
 17/name = "tileset_17"
-17/texture = ExtResource( 10 )
+17/texture = ExtResource( 6 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
 17/region = Rect2( 0, 0, 64, 64 )
@@ -191,7 +167,7 @@
 17/navigation_offset = Vector2( 32, 32 )
 17/shapes = [  ]
 18/name = "tileset_18"
-18/texture = ExtResource( 11 )
+18/texture = ExtResource( 7 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
 18/region = Rect2( 0, 0, 64, 64 )
@@ -200,7 +176,7 @@
 18/navigation_offset = Vector2( 32, 32 )
 18/shapes = [  ]
 19/name = "tileset_19"
-19/texture = ExtResource( 12 )
+19/texture = ExtResource( 8 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
 19/region = Rect2( 0, 0, 64, 64 )
@@ -209,7 +185,7 @@
 19/navigation_offset = Vector2( 32, 32 )
 19/shapes = [  ]
 20/name = "tileset_20"
-20/texture = ExtResource( 14 )
+20/texture = ExtResource( 9 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
 20/region = Rect2( 0, 0, 64, 64 )
@@ -218,7 +194,7 @@
 20/navigation_offset = Vector2( 32, 32 )
 20/shapes = [  ]
 21/name = "tileset_21"
-21/texture = ExtResource( 15 )
+21/texture = ExtResource( 10 )
 21/tex_offset = Vector2( 0, 0 )
 21/modulate = Color( 1, 1, 1, 1 )
 21/region = Rect2( 0, 0, 64, 64 )
@@ -227,7 +203,7 @@
 21/navigation_offset = Vector2( 32, 32 )
 21/shapes = [  ]
 22/name = "tileset_22"
-22/texture = ExtResource( 16 )
+22/texture = ExtResource( 11 )
 22/tex_offset = Vector2( 0, 0 )
 22/modulate = Color( 1, 1, 1, 1 )
 22/region = Rect2( 0, 0, 64, 64 )
@@ -236,7 +212,7 @@
 22/navigation_offset = Vector2( 32, 32 )
 22/shapes = [  ]
 23/name = "tileset_23"
-23/texture = ExtResource( 17 )
+23/texture = ExtResource( 12 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
 23/region = Rect2( 0, 0, 64, 64 )
@@ -245,7 +221,7 @@
 23/navigation_offset = Vector2( 32, 32 )
 23/shapes = [  ]
 24/name = "tileset_24"
-24/texture = ExtResource( 18 )
+24/texture = ExtResource( 13 )
 24/tex_offset = Vector2( 0, 0 )
 24/modulate = Color( 1, 1, 1, 1 )
 24/region = Rect2( 0, 0, 64, 64 )
@@ -253,4 +229,5 @@
 24/occluder_offset = Vector2( 32, 32 )
 24/navigation_offset = Vector2( 32, 32 )
 24/shapes = [  ]
+_sections_unfolded = [ "Resource" ]
 
