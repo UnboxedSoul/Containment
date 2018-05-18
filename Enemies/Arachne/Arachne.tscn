@@ -40,13 +40,14 @@ radius = 7.67107
 script = ExtResource( 1 )
 SPEED = 100
 MAX_HEALTH = 100.0
+drop_value = 20
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 2
+frame = 5
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -71,6 +72,7 @@ shape = SubResource( 2 )
 position = Vector2( 0, -8 )
 rotation = 1.5708
 texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="health_bar_green" type="Sprite" parent="." index="3"]
 

@@ -9,7 +9,7 @@ export var MAX_HEALTH=100.0
 var cur_speed=SPEED
 var health=MAX_HEALTH
 var burn_damage=0
-
+export var drop_value=20
 func _ready():
 	set_process(true)
 
@@ -21,7 +21,7 @@ func damage(dmg):
 		dead=true
 		$Area2D.queue_free()
 		$DecayTimer.start()
-		globals.energy+=20
+		globals.energy+=drop_value
 		get_parent().enemy_count-=1
 		return true
 	return false
@@ -31,6 +31,7 @@ func _process(delta):
 		if(path):
 			path_offset+=cur_speed*delta
 			path.offset=path_offset
+			
 			position = path.position+pos_offset
 		else:
 			position.x-=cur_speed*delta

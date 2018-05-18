@@ -1,111 +1,125 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Enemies/Tankbot/Tankbot.gd" type="Script" id=1]
-[ext_resource path="res://Enemies/Tankbot/Body.png" type="Texture" id=2]
-[ext_resource path="res://Enemies/Tankbot/LeftLeg.png" type="Texture" id=3]
-[ext_resource path="res://Enemies/Tankbot/RightLeg.png" type="Texture" id=4]
+[ext_resource path="res://Enemies/Tankbot/TankBo_Tankbot_Walk_000.png" type="Texture" id=2]
+[ext_resource path="res://Enemies/Tankbot/TankBo_Tankbot_Walk_002.png" type="Texture" id=3]
+[ext_resource path="res://Enemies/Tankbot/TankBo_Tankbot_Walk_003.png" type="Texture" id=4]
+[ext_resource path="res://Enemies/Tankbot/TankBo_Tankbot_Walk_001.png" type="Texture" id=5]
+[ext_resource path="res://Enemies/Tankbot/TankBo_Tankbot_Die_000.png" type="Texture" id=6]
+[ext_resource path="res://Enemies/Tankbot/TankB_002.png" type="Texture" id=7]
+[ext_resource path="res://Enemies/Tankbot/TankB_001.png" type="Texture" id=8]
+[ext_resource path="res://Enemies/Tankbot/TankB_003.png" type="Texture" id=9]
+[ext_resource path="res://Enemies/Tankbot/TankB_004.png" type="Texture" id=10]
+[ext_resource path="res://Enemies/Tankbot/tankbo_005.png" type="Texture" id=11]
+[ext_resource path="res://Enemies/Tankbot/TankBo_Tankbot_Attack_000.png" type="Texture" id=12]
+[ext_resource path="res://Enemies/Tankbot/TankBo_Tankbot_Attack_001.png" type="Texture" id=13]
+[ext_resource path="res://UI/health_bar_red.png" type="Texture" id=14]
+[ext_resource path="res://UI/health_bar_green.png" type="Texture" id=15]
+[ext_resource path="res://Towers/beams/BurningFire.tscn" type="PackedScene" id=16]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="SpriteFrames" id=1]
 
-resource_name = "Walk"
-length = 1.0
-loop = false
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/LeftLeg:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 0,
-"values": [  ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Body/LeftLeg:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 0,
-"values": [  ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Body/RightLeg:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 0,
-"values": [  ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Body/RightLeg:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 0,
-"values": [  ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Body:rotation_degrees")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 0,
-"values": [  ]
-}
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": false,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 20.6324, 22.0149 )
 
 [node name="TankBot" type="Node2D" index="0"]
 
-scale = Vector2( 0.15, 0.15 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 SPEED = 100
 MAX_HEALTH = 100.0
+drop_value = 20
 
-[node name="Body" type="Sprite" parent="." index="0"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-texture = ExtResource( 2 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 1 )
+animation = "walk"
+frame = 2
+playing = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="LeftLeg" type="Sprite" parent="Body" index="0"]
+[node name="Area2D" type="Area2D" parent="." index="1"]
 
-position = Vector2( 100.732, 207.968 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="RightLeg" type="Sprite" parent="Body" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-show_behind_parent = true
-position = Vector2( -72.0354, 214.212 )
-texture = ExtResource( 4 )
+shape = SubResource( 2 )
+
+[node name="health_bar_red" type="Sprite" parent="." index="2"]
+
+position = Vector2( 0, -24.7 )
+rotation = 1.5708
+texture = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+[node name="health_bar_green" type="Sprite" parent="." index="3"]
 
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/Walk = SubResource( 1 )
-blend_times = [  ]
+position = Vector2( -9.01629, -24.6707 )
+rotation = 1.5708
+texture = ExtResource( 15 )
+centered = false
+offset = Vector2( -0.507844, -18.0126 )
+_sections_unfolded = [ "Material", "Offset", "Transform", "Visibility", "Z Index" ]
+
+[node name="DecayTimer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 1.5
+one_shot = false
+autostart = false
+
+[node name="EffectTimer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="BurningFlame" parent="." index="6" instance=ExtResource( 16 )]
+
+visible = false
+position = Vector2( 2.52448, -20.038 )
+scale = Vector2( 2, 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BurnTimer" type="Timer" parent="." index="7"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="DecayTimer" to="." method="_on_DecayTimer_timeout"]
+
+[connection signal="timeout" from="EffectTimer" to="." method="_on_EffectTimer_timeout"]
+
+[connection signal="timeout" from="BurnTimer" to="." method="_on_BurnTimer_timeout"]
 
 
