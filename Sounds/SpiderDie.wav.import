@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SpiderDie.wav-a1dbd1d3357925cf5bd92724f3d7ccc0.sample"
+
+[deps]
+
+source_file="res://Sounds/SpiderDie.wav"
+source_md5="e27c558da979d619fa63cae854b4627b"
+
+dest_files=[ "res://.import/SpiderDie.wav-a1dbd1d3357925cf5bd92724f3d7ccc0.sample" ]
+dest_md5="6e0f5c60ff8a49716121edfac2715e08"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -49,11 +49,11 @@ func fire_at(target):
 		if(target.get_ref().get_parent().health > 0):
 			target.get_ref().get_parent().damage(DAMAGE*level)
 		#Add an arc source
-		var new_arc = arc_source.instance()
-		new_arc.dmg = DAMAGE*level
-		new_arc.src = cur_target
-		target.get_ref().get_parent().add_child(new_arc)
-		new_arc.arc()
+		#var new_arc = arc_source.instance()
+		#new_arc.dmg = DAMAGE*level
+		#new_arc.src = cur_target
+		#target.get_ref().get_parent().add_child(new_arc)
+		#new_arc.arc()
 		#if():
 		#	get_parent().get_parent().add_power(20)
 

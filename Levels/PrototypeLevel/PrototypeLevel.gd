@@ -64,6 +64,7 @@ func _on_ExitZone_area_entered( area ):
 	health-=1
 	enemy_count-=1
 	area.get_parent().queue_free()
+	print(area.get_parent().get_path())
 	update_hud()
 
 func _on_btnStartWave_pressed():
