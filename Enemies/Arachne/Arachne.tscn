@@ -1,17 +1,17 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Enemies/Arachne/Arachne.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Walk_000.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Walk_001.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Walk_002.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Walk_003.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Walk_004.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Walk_005.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Die_000.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Die_001.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Die_002.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Die_003.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Die_004.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Die_000.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Die_001.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Die_002.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Die_003.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Die_004.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Walk_000.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Walk_001.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Walk_002.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Walk_003.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Walk_004.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Arachne/arachn_Arachne_Walk_005.png" type="Texture" id=12]
 [ext_resource path="res://UI/health_bar_red.png" type="Texture" id=13]
 [ext_resource path="res://UI/health_bar_green.png" type="Texture" id=14]
 [ext_resource path="res://Towers/beams/BurningFire.tscn" type="PackedScene" id=15]
@@ -19,15 +19,15 @@
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "walk",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": false,
 "name": "die",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
@@ -35,7 +35,7 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 7.67107
 
-[node name="Arachne" type="Node2D"]
+[node name="Arachne" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 SPEED = 100
@@ -46,12 +46,13 @@ MAX_HEALTH = 100.0
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 4
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="." index="1"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -73,10 +74,12 @@ texture = ExtResource( 13 )
 
 [node name="health_bar_green" type="Sprite" parent="." index="3"]
 
-position = Vector2( 0, -8 )
+position = Vector2( -9, -8 )
 rotation = 1.5708
 texture = ExtResource( 14 )
-_sections_unfolded = [ "Transform" ]
+centered = false
+offset = Vector2( -0.5, -18 )
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="DecayTimer" type="Timer" parent="." index="4"]
 

@@ -1,17 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Towers/MagneTower.gd" type="Script" id=1]
+[ext_resource path="res://Towers/SlowDownTower.gd" type="Script" id=1]
 [ext_resource path="res://Towers/data/SlowDownTowerIcon.png" type="Texture" id=2]
 [ext_resource path="res://Towers/data/TowerBase.png" type="Texture" id=3]
 [ext_resource path="res://Towers/data/TowerColor.png" type="Texture" id=4]
 [ext_resource path="res://Towers/data/SlowDown.png" type="Texture" id=5]
+[ext_resource path="res://Sounds/SlowDownTowerShoot.wav" type="AudioStream" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 137.702
 
-[node name="MagneTower" type="Node2D" index="0"]
+[node name="SlowDownTower" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -27,6 +28,7 @@ EFFECT_DURATION = 1.5
 
 [node name="tower" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
 centered = false
@@ -97,6 +99,16 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = true
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="SensorRange" to="." method="_on_SensorRange_area_entered"]
 

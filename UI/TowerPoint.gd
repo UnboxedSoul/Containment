@@ -24,7 +24,7 @@ func _ready():
 
 func spawn_tower(t):
 	tower=t.instance()
-	if(tower.COST<=get_parent().power):
+	if(tower.COST<=globals.energy):
 		add_child(tower)
 		hide_menu()
 		get_parent().add_power(-tower.COST)
@@ -83,7 +83,7 @@ func _on_btnRemove_pressed():
 
 func _on_btnUpgrade_pressed():
 	if(tower):
-		if(tower.COST<=get_parent().power):
+		if(tower.COST<=globals.energy):
 			if(tower.level_up()):
 				get_parent().add_power(-tower.COST)
 	hide_menu()
