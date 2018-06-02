@@ -1,0 +1,157 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Levels/PrototypeLevel/PrototypeLevel.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/Tankbot/TankBot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/TowerPoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tiles/tileset1.tres" type="TileSet" id=4]
+[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/BLADRMF_.TTF" type="DynamicFontData" id=6]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -36.1546, 85.2657, 0, 0, 0, 0, 196.845, 89.2657, 0, 0, 0, 0, 189.845, 530.266, 0, 0, 0, 0, 773.731, 532.729, 0, 0, 0, 0, 768.845, 226.266, 0, 0, 0, 0, 449.845, 219.266, 0, 0, 0, 0, 452.845, 91.2657, 0, 0, 0, 0, 826.845, 85.2657, 0, 0, 0, 0, 830.845, -42.7343 )
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 29.3909, 26.7036 )
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 41
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="PrototypeLevel" type="Node2D"]
+
+script = ExtResource( 1 )
+spider_bot = ExtResource( 2 )
+tower_menu = ExtResource( 3 )
+power = 100
+waves = [ 5, 10 ]
+wave_spawn_delays = [ 1, 1, 0.5, 0.5, 0.25, 0.25 ]
+next_scene = null
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+z_index = -2
+mode = 0
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 11, 0, 1, 11, 0, 2, 11, 0, 3, 11, 0, 4, 11, 0, 5, 11, 0, 6, 11, 0, 7, 11, 0, 8, 11, 0, 9, 11, 0, 10, 11, 0, 11, 11, 0, 12, 11, 0, 13, 14, 0, 14, 11, 0, 15, 11, 0, 65536, 19, 0, 65537, 19, 0, 65538, 19, 0, 65539, 16, 0, 65540, 11, 0, 65541, 11, 0, 65542, 11, 0, 65543, 15, 0, 65544, 19, 0, 65545, 19, 0, 65546, 19, 0, 65547, 19, 0, 65548, 19, 0, 65549, 18, 0, 65550, 11, 0, 65551, 11, 0, 131072, 11, 0, 131073, 11, 0, 131074, 12, 0, 131075, 14, 0, 131076, 11, 0, 131077, 11, 0, 131078, 11, 0, 131079, 14, 0, 131080, 12, 0, 131081, 11, 0, 131082, 11, 0, 131083, 11, 0, 131084, 11, 0, 131085, 12, 0, 131086, 11, 0, 131087, 11, 0, 196608, 11, 0, 196609, 11, 0, 196610, 11, 0, 196611, 14, 0, 196612, 11, 0, 196613, 11, 0, 196614, 11, 0, 196615, 17, 0, 196616, 19, 0, 196617, 19, 0, 196618, 19, 0, 196619, 19, 0, 196620, 16, 0, 196621, 11, 0, 196622, 11, 0, 196623, 11, 0, 262144, 11, 0, 262145, 11, 0, 262146, 11, 0, 262147, 14, 0, 262148, 11, 0, 262149, 11, 0, 262150, 11, 0, 262151, 11, 0, 262152, 11, 0, 262153, 11, 0, 262154, 11, 0, 262155, 12, 0, 262156, 14, 0, 262157, 11, 0, 262158, 11, 0, 262159, 11, 0, 327680, 11, 0, 327681, 11, 0, 327682, 11, 0, 327683, 14, 0, 327684, 11, 0, 327685, 11, 0, 327686, 11, 0, 327687, 11, 0, 327688, 11, 0, 327689, 11, 0, 327690, 11, 0, 327691, 11, 0, 327692, 14, 0, 327693, 11, 0, 327694, 11, 0, 327695, 11, 0, 393216, 11, 0, 393217, 11, 0, 393218, 11, 0, 393219, 14, 0, 393220, 11, 0, 393221, 11, 0, 393222, 11, 0, 393223, 11, 0, 393224, 11, 0, 393225, 11, 0, 393226, 15, 0, 393227, 19, 0, 393228, -1073741803, 0, 393229, 11, 0, 393230, 11, 0, 393231, 11, 0, 458752, 11, 0, 458753, 11, 0, 458754, 12, 0, 458755, 14, 0, 458756, 12, 0, 458757, 11, 0, 458758, 11, 0, 458759, 11, 0, 458760, 11, 0, 458761, 11, 0, 458762, -1610612717, 0, 458763, 12, 0, 458764, 14, 0, 458765, 11, 0, 458766, 11, 0, 458767, 11, 0, 524288, 11, 0, 524289, 11, 0, 524290, 11, 0, 524291, 17, 0, 524292, 19, 0, 524293, 19, 0, 524294, 19, 0, 524295, 19, 0, 524296, 19, 0, 524297, 19, 0, 524298, 21, 0, 524299, 19, 0, 524300, 18, 0, 524301, 11, 0, 524302, 11, 0, 524303, 11, 0, 589824, 536870923, 0, 589825, 11, 0, 589826, 536870923, 0, 589827, 536870923, 0, 589828, 536870923, 0, 589829, 11, 0, 589830, 536870923, 0, 589831, 536870923, 0, 589832, 536870923, 0, 589833, 536870923, 0, 589834, 11, 0, 589835, 11, 0, 589836, 11, 0, 589837, 11, 0, 589838, 11, 0, 589839, 11, 0 )
+_sections_unfolded = [ "Cell", "Z Index" ]
+
+[node name="Path" type="Path2D" parent="." index="1"]
+
+position = Vector2( 32.1546, 1.73431 )
+curve = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path" index="0"]
+
+visible = false
+position = Vector2( -36.1546, 85.2657 )
+rotation = 0.0171712
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = false
+lookahead = 4.0
+
+[node name="HUD" parent="." index="2" instance=ExtResource( 5 )]
+
+[node name="ExitZone" type="Area2D" parent="." index="3"]
+
+position = Vector2( 1055.96, 28.8089 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitZone" index="0"]
+
+position = Vector2( -708.033, 621.607 )
+shape = SubResource( 2 )
+
+[node name="SpawnTimer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="StartTimer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = false
+autostart = false
+
+[node name="WaveTimer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="btnStartWave" type="Button" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 374.0
+margin_top = 194.0
+margin_right = 707.0
+margin_bottom = 247.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 3 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Start Wave"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[connection signal="area_entered" from="ExitZone" to="." method="_on_ExitZone_area_entered"]
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
+
+[connection signal="pressed" from="btnStartWave" to="." method="_on_btnStartWave_pressed"]
+
+

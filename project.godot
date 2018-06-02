@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Containment"
-run/main_scene="res://Levels/PrototypeLevel/PrototypeLevel.tscn"
+run/main_scene="res://Levels/Level1/level1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
