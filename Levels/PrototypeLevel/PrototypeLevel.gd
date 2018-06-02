@@ -8,10 +8,12 @@ var MAX_HEALTH=20.0
 var health=MAX_HEALTH
 export var power=50
 var cur_wave=-1
-export var waves = [5,10,15,20,50,100] #Each one is the number of enemies in that wave
+export var waves = [5,10] #Each one is the number of enemies in that wave
 export var wave_spawn_delays = [1,1,.5,.5,.25,.25]
 var num_enemies = 0
 var enemy_count = 0
+export (PackedScene) var next_scene
+
 
 func _ready():
 	paths.append($Path/PathFollow2D)
@@ -39,13 +41,12 @@ func add_power(amt):
 func _process(delta):
 	update_hud()
 	
-	if(cur_wave==waves.size()-1):
-		$btnStartWave.hide()
-		return
-		
 	if(enemy_count <= 0):
-		$btnStartWave.show()
-	else:		
+		if(cur_wave<waves.size()-1):
+			$btnStartWave.show()
+		else:
+			get_tree().change_scene(next_scene.resource_path)
+	else:
 		$btnStartWave.hide()
 		
 func _on_SpawnTimer_timeout():

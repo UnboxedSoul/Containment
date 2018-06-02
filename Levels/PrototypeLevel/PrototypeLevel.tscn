@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Levels/PrototypeLevel/PrototypeLevel.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/Tankbot/TankBot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/TowerPoint.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Tiles/tileset1.tres" type="TileSet" id=4]
-[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=5]
-[ext_resource path="res://UI/BLADRMF_.TTF" type="DynamicFontData" id=6]
+[ext_resource path="res://Levels/Level1/level1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Tiles/tileset1.tres" type="TileSet" id=5]
+[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/BLADRMF_.TTF" type="DynamicFontData" id=7]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -31,23 +32,24 @@ extents = Vector2( 29.3909, 26.7036 )
 size = 41
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="PrototypeLevel" type="Node2D"]
+[node name="PrototypeLevel" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 spider_bot = ExtResource( 2 )
 tower_menu = ExtResource( 3 )
 power = 100
-waves = [ 5, 10, 15, 20, 50, 100 ]
+waves = [ 5, 10 ]
 wave_spawn_delays = [ 1, 1, 0.5, 0.5, 0.25, 0.25 ]
+next_scene = ExtResource( 4 )
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
 z_index = -2
 mode = 0
-tile_set = ExtResource( 4 )
+tile_set = ExtResource( 5 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -107,7 +109,7 @@ cubic_interp = true
 loop = false
 lookahead = 4.0
 
-[node name="HUD" parent="." index="3" instance=ExtResource( 5 )]
+[node name="HUD" parent="." index="3" instance=ExtResource( 6 )]
 
 [node name="ExitZone" type="Area2D" parent="." index="4"]
 
